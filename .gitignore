@@ -132,4 +132,4 @@ dmypy.json
 .DS_store
 
 #secret.py
-secret.py
+secrets.py
