@@ -133,3 +133,7 @@ dmypy.json
 
 #secret.py
 secrets.py
+
+#jupyter notebook stuff
+__pycache__
+.ipynb_checkpoints
