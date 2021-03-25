@@ -1,1 +1,1 @@
-web: gunicorn app:crypto_flask_app 
+web: gunicorn app:app 

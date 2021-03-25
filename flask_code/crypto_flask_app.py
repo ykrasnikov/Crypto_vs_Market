@@ -46,22 +46,23 @@ def home_page():
 #####################################################################
 ################### setup end_point ep1 API route
 #####################################################################
-@app.route("/api/ep1/<entry>")
-def end_point1(entry):
+@app.route("/getids")
+def end_point1():
      """returns all data"""
-     app.logger.info('endpoint 1', entry)
-     print('end_point1 ', entry)
      
-     json_data=db_search(entry,entry)
+     json_data=db_search()
      print(json_data)
      return json_data
+
+
+
 
 
 #####################################################################
 ################### Database Connection 
 #####################################################################
-def db_search(date,currency):
-    print("DB_serach input",date,currency)
+def db_search():
+    print("DB_serach input")
     # Initialize PyMongo to work with MongoDBs
     conn = f'mongodb+srv://{user}:{password}@cluster0.yicgz.mongodb.net/Crypto_vs_Market?retryWrites=true&w=majority'
     client = MongoClient(conn) 
