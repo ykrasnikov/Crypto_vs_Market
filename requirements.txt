@@ -15,3 +15,5 @@ plotly
 Flask
 Flask-SQLAlchemy
 gunicorn
+flask_cors
+pymongo

@@ -132,4 +132,8 @@ dmypy.json
 .DS_store
 
 #secret.py
-secrets.py
+#secrets.py
+
+#jupyter notebook stuff
+__pycache__
+.ipynb_checkpoints

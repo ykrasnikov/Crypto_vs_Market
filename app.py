@@ -2,16 +2,16 @@
 ################### Import libraries
 #####################################################################
 from pymongo import MongoClient
-from bson.json_util import dumps
+#from bson.json_util import dumps
 import dns.resolver
-from secrets import password
-from secrets import user
+# from secrets import password
+# from secrets import user
 import pandas as pd
 import datetime as dt
 # Flask
 from flask import Flask,jsonify
 # CORS making cross-origin AJAX possible
-from flask_cors import CORS
+#from flask_cors import CORS
 # database querry
 
 
@@ -19,7 +19,7 @@ from flask_cors import CORS
 ################### Flask setup
 #####################################################################
 app=Flask(__name__)
-CORS(app)
+#CORS(app)
 
 #####################################################################
 ################### setup home page with list of available routes
@@ -49,30 +49,30 @@ def home_page():
 @app.route("/getids")
 def end_point1():
      """returns all data"""
+     app.logger.info('endpoint 1')
+     print('end_point1 ')
      
      json_data=db_search()
      print(json_data)
      return json_data
 
 
-
-
-
 #####################################################################
 ################### Database Connection 
 #####################################################################
 def db_search():
-    print("DB_serach input")
-    # Initialize PyMongo to work with MongoDBs
-    conn = f'mongodb+srv://{user}:{password}@cluster0.yicgz.mongodb.net/Crypto_vs_Market?retryWrites=true&w=majority'
-    client = MongoClient(conn) 
-    #Define database and collection
-    db=client.Crypto_vs_Market
-    collection=db.crypto_history
-    # search
-    record=collection.find().limit(5)
-    request_json=dumps(list(record))
-    client.close()
+    # print("DB_serach input")
+    # # Initialize PyMongo to work with MongoDBs
+    # conn = 'mongodb+srv://dbUser1:dbCrypto1@cluster0.yicgz.mongodb.net/Crypto_vs_Market?retryWrites=true&w=majority'
+    # client = MongoClient(conn) 
+    # #Define database and collection
+    # db=client.Crypto_vs_Market
+    # collection=db.crypto_history
+    # # search
+    # record=collection.find().limit(5)
+    # request_json=dumps(list(record))
+    # client.close()
+    request_json = jsonify({"data 1":"value 1"})
     return request_json
 
 
