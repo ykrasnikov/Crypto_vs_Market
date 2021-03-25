@@ -46,13 +46,13 @@ def home_page():
 #####################################################################
 ################### setup end_point ep1 API route
 #####################################################################
-@app.route("/api/ep1/<entry>")
-def end_point1(entry):
+@app.route("/getids")
+def end_point1():
      """returns all data"""
-     app.logger.info('endpoint 1', entry)
-     print('end_point1 ', entry)
+     app.logger.info('endpoint 1')
+     print('end_point1 ')
      
-     json_data=db_search(entry,entry)
+     json_data=db_search()
      print(json_data)
      return json_data
 
@@ -60,10 +60,10 @@ def end_point1(entry):
 #####################################################################
 ################### Database Connection 
 #####################################################################
-def db_search(date,currency):
-    print("DB_serach input",date,currency)
+def db_search():
+    print("DB_serach input")
     # Initialize PyMongo to work with MongoDBs
-    conn = f'mongodb+srv://{user}:{password}@cluster0.yicgz.mongodb.net/Crypto_vs_Market?retryWrites=true&w=majority'
+    conn = f'mongodb+srv://dbUser1:dbCrypto1@cluster0.yicgz.mongodb.net/Crypto_vs_Market?retryWrites=true&w=majority'
     client = MongoClient(conn) 
     #Define database and collection
     db=client.Crypto_vs_Market
