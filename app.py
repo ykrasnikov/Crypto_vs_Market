@@ -61,17 +61,18 @@ def end_point1():
 ################### Database Connection 
 #####################################################################
 def db_search():
-    print("DB_serach input")
-    # Initialize PyMongo to work with MongoDBs
-    conn = 'mongodb+srv://dbUser1:dbCrypto1@cluster0.yicgz.mongodb.net/Crypto_vs_Market?retryWrites=true&w=majority'
-    client = MongoClient(conn) 
-    #Define database and collection
-    db=client.Crypto_vs_Market
-    collection=db.crypto_history
-    # search
-    record=collection.find().limit(5)
-    request_json=dumps(list(record))
-    client.close()
+    # print("DB_serach input")
+    # # Initialize PyMongo to work with MongoDBs
+    # conn = 'mongodb+srv://dbUser1:dbCrypto1@cluster0.yicgz.mongodb.net/Crypto_vs_Market?retryWrites=true&w=majority'
+    # client = MongoClient(conn) 
+    # #Define database and collection
+    # db=client.Crypto_vs_Market
+    # collection=db.crypto_history
+    # # search
+    # record=collection.find().limit(5)
+    # request_json=dumps(list(record))
+    # client.close()
+    request_json = jsonify({"data 1":"value 1"})
     return request_json
 
 
