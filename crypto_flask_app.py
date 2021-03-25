@@ -11,7 +11,7 @@ import datetime as dt
 # Flask
 from flask import Flask,jsonify
 # CORS making cross-origin AJAX possible
-from flask_cors import CORS
+#from flask_cors import CORS
 # database querry
 
 
@@ -19,7 +19,7 @@ from flask_cors import CORS
 ################### Flask setup
 #####################################################################
 app=Flask(__name__)
-CORS(app)
+#CORS(app)
 
 #####################################################################
 ################### setup home page with list of available routes
