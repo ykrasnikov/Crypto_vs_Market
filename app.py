@@ -2,7 +2,7 @@
 ################### Import libraries
 #####################################################################
 from pymongo import MongoClient
-from bson.json_util import dumps
+#from bson.json_util import dumps
 import dns.resolver
 # from secrets import password
 # from secrets import user
