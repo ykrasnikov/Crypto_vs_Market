@@ -63,7 +63,7 @@ def end_point1():
 def db_search():
     print("DB_serach input")
     # Initialize PyMongo to work with MongoDBs
-    conn = f'mongodb+srv://dbUser1:dbCrypto1@cluster0.yicgz.mongodb.net/Crypto_vs_Market?retryWrites=true&w=majority'
+    conn = 'mongodb+srv://dbUser1:dbCrypto1@cluster0.yicgz.mongodb.net/Crypto_vs_Market?retryWrites=true&w=majority'
     client = MongoClient(conn) 
     #Define database and collection
     db=client.Crypto_vs_Market
