@@ -4,8 +4,8 @@
 from pymongo import MongoClient
 from bson.json_util import dumps
 import dns.resolver
-from secrets import password
-from secrets import user
+# from secrets import password
+# from secrets import user
 import pandas as pd
 import datetime as dt
 # Flask
