@@ -237,9 +237,34 @@ let parseTime = d3.timeParse("%m-%e-%Y");
     .classed(`${color}-text text`, true)
     .text(`${choice} Cost at Close`);
 
-}
-}};
-};
+    let circlesGroup = chartGroup.selectAll("circle")
+    .data(dataArray)
+    .enter()
+    .append("circle")
+    .attr("cx", d => xTimeScale(d[1]))
+    .attr("cy", d => yLinearScale(d[0]))
+    .attr("r", "5")
+    .attr("fill", "green");
+
+  // Step 1: Append a div to the body to create tooltips, assign it a class
+  // =======================================================
+  let toolTip = d3.select("body").append("div")
+    .attr("class", "tooltip");
+
+  // Step 2: Add an onmouseover event to display a tooltip
+  // ========================================================
+  circlesGroup.on("mouseover", function(event, d) {
+    toolTip.style("display", "block");
+    toolTip.html(` <strong> ${choice} Cost:${d[0]} <br> Date: ${d[1]}</strong>`)
+      .style("left", event.pageX + "px")
+      .style("top", event.pageY + "px");
+  })
+    // Step 3: Add an onmouseout event to make the tooltip invisible
+    .on("mouseout", function() {
+      toolTip.style("display", "none");
+    });
+
+}}}};
 
 // When the browser loads, makeResponsive() is called.
 makeResponsive();
