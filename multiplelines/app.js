@@ -1,5 +1,7 @@
+function makeResponsive() {
 scrapeData('BTC', 1, "01-01-2013", "01-01-2021");
 scrapeData('LTC', 2, "01-01-2013", "01-01-2021");
+
 
 d3.selectAll("#selDataset").on("change", updateChoice);
 d3.selectAll("#startyear").on("change", updateChoice);
@@ -58,29 +60,25 @@ function scrapeData(coin, choiceNum, startYear, endYear){
   });
 };}
 
-// d3.select(window).on("resize", makeResponsive);
 let svgArea = d3.select("body").select("svg");
+  if (!svgArea.empty()) {
+    svgArea.remove();
+  }
 
-if (!svgArea.empty()) {
-  svgArea.remove();
-}
+  // SVG wrapper dimensions are determined by the current width
+  // and height of the browser window.
+  let svgWidth = window.innerWidth;
+  let svgHeight = window.innerHeight;
 
-  // svg params
-let svgHeight = window.innerHeight;
-let svgWidth = window.innerWidth;
+  let margin = {
+    top: 30,
+    right: 100,
+    bottom: 100,
+    left: 100
+  };
 
-  // margins
-let margin = {
-  top: 50,
-  right: 100,
-  bottom: 100,
-  left: 100
-};
-
-// Define dimensions of the chart area
-let chartWidth = svgWidth - margin.left - margin.right;
-let chartHeight = svgHeight - margin.top - margin.bottom;
-
+  let chartHeight = svgHeight - margin.top - margin.bottom;
+  let chartWidth = svgWidth - margin.left - margin.right;
 
 // Select body, append SVG area to it, and set its dimensions
 let svg = d3.select("body")
@@ -241,7 +239,12 @@ let parseTime = d3.timeParse("%m-%e-%Y");
 
 }
 }};
+};
 
+// When the browser loads, makeResponsive() is called.
+makeResponsive();
 
+// When the browser window is resized, responsify() is called.
+d3.select(window).on("resize", makeResponsive);
 
 
