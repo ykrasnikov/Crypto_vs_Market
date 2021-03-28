@@ -68,22 +68,43 @@ else if (choice == 'vix'){
   });
 }
 
-else if (choice == 'crypto'){
-  const cryptoLink = 'http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/crypto/';
+else if (choice == 'bitcoin'){
+  const cryptoLink = 'http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/crypto/BTC/01-01-2013,01-01-2021';
   d3.json(cryptoLink).then((data, i) => {
     // Once we get a response, send the data.features object to the createFeatures function
     let closeCrypto = data.map((values, i) => data[i].Close);
-    // console.log(closeCrypto);
-    graphData(closeCrypto);
+    let date = data.map((values, i) => (data[i].Date.$date));
+    console.log(closeCrypto);
+    graphData(closeCrypto, date, "Bitcoin");
   });
 }
-
+else if (choice == 'litecoin'){
+  const cryptoLink = 'http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/crypto/LTC/01-01-2013,01-01-2021';
+  d3.json(cryptoLink).then((data, i) => {
+    // Once we get a response, send the data.features object to the createFeatures function
+    let closeCrypto = data.map((values, i) => data[i].Close);
+    let date = data.map((values, i) => (data[i].Date.$date));
+    console.log(closeCrypto);
+    graphData(closeCrypto, date, "Litecoin");
+  });
+}
+else if (choice == 'etherum'){
+  const cryptoLink = 'http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/crypto/ETC/01-01-2013,01-01-2021';
+  d3.json(cryptoLink).then((data, i) => {
+    // Once we get a response, send the data.features object to the createFeatures function
+    let closeCrypto = data.map((values, i) => data[i].Close);
+    let date = data.map((values, i) => (data[i].Date.$date));
+    console.log(closeCrypto);
+    graphData(closeCrypto, date, "Etherum");
+  });
+}
 else {
   graphData("none", "none" , "none")
   console.log('no data selected');
 }
 };
-
+//Scrape data function
+function scrapData
 // Get data for second axis on the graph
 function getData2(choice){
   if (choice == 'dollar' ) {
