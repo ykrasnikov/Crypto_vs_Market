@@ -1,0 +1,26 @@
+click
+datetime
+dnspython
+Flask
+Flask-Cors
+Flask-PyMongo
+gunicorn
+itsdangerous
+Jinja2
+jsonschema
+MarkupSafe
+numpy
+pandas
+pymongo
+python-dateutil
+Werkzeug
+<<<<<<< HEAD:AWS_deployment/requirements.txt
+
+=======
+plotly
+Flask
+Flask-SQLAlchemy
+gunicorn
+flask_cors
+pymongo
+>>>>>>> upstream/main:requirements.txt
