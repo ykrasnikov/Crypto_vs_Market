@@ -23,3 +23,9 @@
 .green-text {
   fill: green;
 }
+
+.label {
+  font-size: 30px;
+  text-anchor: middle;
+  font-weight: 200;
+}
