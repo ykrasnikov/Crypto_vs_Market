@@ -57,12 +57,17 @@ function init() {
     });
 }
 
-init();
+function clearPlot(elementID)
+{
+    document.getElementById(elementID).innerHTML = "";
+}
+
 // Call updatePlotly() when a change takes place to the DOM
 d3.selectAll("#selDataset").on("change", updatePlot);
 
 function updatePlot() {
-
+    //Clear previous plot
+    clearPlot('plot');
     // Use D3 to select the dropdown menu
     let dropdownMenu = d3.select("#selDataset");
     // Assign the value of the dropdown menu option to a variable
@@ -238,4 +243,4 @@ function updatePlot() {
     }
 }
 
-
+init();
