@@ -15,9 +15,9 @@ anychart.onDocumentReady(function () {
             });
             
             
-            bitcoinData = bitcoinData.map((element)=>({date:element.Date.$date,  open: element.Open, high: element.High, low: element.Low, close: element.Close, volume: element.Volume})); 
-            goldData = goldData.map((element)=>({date:element.Date.$date,  open: element.Open, high: element.High, low: element.Low, close: element.Close, volume: element.Volume})); 
-            vixData = vixData.map((element)=>({date:element.Date.$date,  open: element.Open, high: element.High, low: element.Low, close: element.Close, volume: element.Volume})); 
+            bitcoinData = bitcoinData.map((element)=>({name:element.Name, symbol:element.Symbol, date:element.Date.$date,  open: element.Open, high: element.High, low: element.Low, close: element.Close, volume: element.Volume, mktcap : element.Marketcap})); 
+            goldData = goldData.map((element)=>({name:element.Name, symbol:element.Symbol, date:element.Date.$date,  open: element.Open, high: element.High, low: element.Low, close: element.Close, volume: element.Volume, mktcap : element.Marketcap})); 
+            vixData = vixData.map((element)=>({name:element.Name, symbol:element.Symbol, date:element.Date.$date,  open: element.Open, high: element.High, low: element.Low, close: element.Close, volume: element.Volume, mktcap : element.Marketcap})); 
             
             console.log(bitcoinData);
             console.log(goldData);
