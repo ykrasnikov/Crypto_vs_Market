@@ -33,13 +33,12 @@
 .tooltip {
   display: none;
   position: absolute;
-  width: 100px;
-  height: 125px;
+  width: 80px;
+  height: 30px;
   padding: 2px;
   font: 12px sans-serif;
-  color: white;
-  background-color: black;
   text-align: center;
+  background: orange;
   border: 0;
   border-radius: 10px;
 }
