@@ -93,6 +93,7 @@ let chartGroup = svg.append("g")
 // Load data from forcepoints.csv
 function graphData(x, y, choice, numChoice){
   d3.select("#xLabel").remove()
+  d3.select("#tips").remove()
   if (x == "none"){
     d3.select("#line2").remove()
     d3.select("#lineName2").remove()
@@ -104,6 +105,7 @@ function graphData(x, y, choice, numChoice){
     d3.select("#yAxis").remove()
     d3.select("#xAxis").remove()
     d3.select("#yLeft").remove()
+    d3.select("#tips").remove()
     
 
   }
@@ -113,6 +115,7 @@ function graphData(x, y, choice, numChoice){
   d3.select("#yAxis").remove()
   d3.select("#xAxis").remove()
   d3.select("#yLeft").remove()
+  d3.select("#tips").remove()
   buildGraph(x, y, choice, numChoice)
   }
   else{
@@ -121,15 +124,21 @@ function graphData(x, y, choice, numChoice){
     d3.select("#yAxis2").remove()
     d3.select("#xAxis").remove()
     d3.select("#yRight").remove()
-    buildGraph(x, y, choice, numChoice)
+    d3.select("#circle").remove()
+    let dataArray2 = [];
+  
+  for (var i = 0; i < x.length; i++) {
+        dataArray2.push([ x[i], y[i]])
+    }
+    buildGraph(x, y, choice, numChoice, dataArray2)
 
   }
   // console.log(x);
   // console.log(y);
   //Build data array from user selection
-  function buildGraph(x, y, choice, numChoice){
+  function buildGraph(x, y, choice, numChoice, dataArray2){
   let dataArray = [];
-
+  
   for (var i = 0; i < x.length; i++) {
         dataArray.push([ x[i], y[i]])
     }
@@ -215,6 +224,7 @@ let parseTime = d3.timeParse("%m-%e-%Y");
     .attr("transform", `translate(${chartWidth + 40}, ${chartHeight/2})rotate(90)`)
     .classed(`orange-text label`, true)
     .text(`${choice} Cost at Close`);
+    
     buildLine(yLinearScale, "orange", 2);
   }  
   // Configure a line function called drawLine which will plot the x and y coordinates using our scales
@@ -236,15 +246,25 @@ let parseTime = d3.timeParse("%m-%e-%Y");
   .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 45 + (number*20)})`)
     .classed(`${color}-text text`, true)
     .text(`${choice} Cost at Close`);
-
-    let circlesGroup = chartGroup.selectAll("circle")
+let circlesGroup = chartGroup.selectAll("circle")
     .data(dataArray)
     .enter()
     .append("circle")
+    .attr("id", 'tips')
     .attr("cx", d => xTimeScale(d[1]))
     .attr("cy", d => yLinearScale(d[0]))
-    .attr("r", "5")
-    .attr("fill", "green");
+    .attr("r", "4")
+    .attr("fill", color);
+
+  let circlesGroup2 = chartGroup.selectAll("circle")
+    .data(dataArray2)
+    .enter()
+    .append("circle")
+    .attr("id", 'tips')
+    .attr("cx", d => xTimeScale(d[1]))
+    .attr("cy", d => yLinearScale(d[0]))
+    .attr("r", "4")
+    .attr("fill", color);
 
   // Step 1: Append a div to the body to create tooltips, assign it a class
   // =======================================================
@@ -259,11 +279,18 @@ let parseTime = d3.timeParse("%m-%e-%Y");
       .style("left", event.pageX + "px")
       .style("top", event.pageY + "px");
   })
+
+  circlesGroup2.on("mouseover", function(event, d) {
+    toolTip.style("display", "block");
+    toolTip.html(` <strong> ${choice} Cost:${d[0]} <br> Date: ${d[1]}</strong>`)
+      .style("left", event.pageX + "px")
+      .style("top", event.pageY + "px");
+  })
     // Step 3: Add an onmouseout event to make the tooltip invisible
     .on("mouseout", function() {
       toolTip.style("display", "none");
     });
-
+  
 }}}};
 
 // When the browser loads, makeResponsive() is called.
