@@ -19,8 +19,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../static/assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Cryptocurrency Dashboard
@@ -36,12 +36,13 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <!-- Anychart -->
   <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-stock.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-data-adapter.min.js"></script>
-    <!-- CSS Files -->
-  <link href="../static/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../static/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="../static/assets/css/style.css">
+  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-stock.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-data-adapter.min.js"></script>
+
+  <!-- CSS Files -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body class="">
@@ -55,31 +56,31 @@
 
       <div class="sidebar-wrapper">
         <div class="logo">
-          <a href="#" class="simple-text">
+          <a href="/" class="simple-text">
             Cryptocurrency vs Market
           </a>
         </div>
 
         <ul class="nav">
-          <li class="active">
+          <li>
             <a href="/">
-              <i class="active"></i>
+              <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-          <li>
-            <a href="../static/visualizations.html">
-              <i class="now-ui-icons business_chart-bar-32"></i>
+          <li class="active">
+            <a href="#">
+              <i class="active"></i>
               <p>Visualizations</p>
             </a>
           <li>
-            <a href="../static/api.html">
+            <a href="api.html">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>API</p>
             </a>
           <li>
-            <a href="../static/team.html">
+            <a href="team.html">
               <i class="now-ui-icons users_single-02"></i>
               <p>Team Members</p>
             </a>
@@ -102,7 +103,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Dashboard</a>
+            <a class="navbar-brand" href="../templates/index.html">Dashboard</a>
           </div>
           <!-- Dropdown button -->
           <div class="nav-item dropdown">
@@ -112,10 +113,10 @@
               Dropdown
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Dashboard</a>
-              <a class="dropdown-item" href="../static/visualizations.html">Visualizations</a>
-              <a class="dropdown-item" href="../static/api.html">API</a>
-              <a class="dropdown-item" href="../static/team.html">Team Members</a>
+              <a class="dropdown-item" href="/">Dashboard</a>
+              <a class="dropdown-item" href="#">Visualizations</a>
+              <a class="dropdown-item" href="api.html">API</a>
+              <a class="dropdown-item" href="team.html">Team Members</a>
             </div>
           </div>
 
@@ -131,39 +132,21 @@
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header ">
-                Criptocurrency Candlestick Chart
+                Cryptocurrency Plot
               </div>
-              <select id="selDataset">
-                <option value="dataset1">Bitcoin</option>
-                <option value="dataset2">Ethereum</option>
-                <option value="dataset3">Litecoin</option>
-            </select>
               <div class="card-body ">
                 <div id="plot"></div>
-                <script src="../static/assets/js/candlestick_plots.js"></script>
               </div>
             </div>
           </div>
 
-
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="card ">
               <div class="card-header ">
                 Cryptocurrency Plot 2
               </div>
               <div class="card-body ">
-                <div id="plot2" ></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card ">
-              <div class="card-header ">
-                Cryptocurrency Plot 3
-              </div>
-              <div class="card-body ">
-                <div id="plot3" ></div>
+                <div id="plot2"></div>
               </div>
             </div>
           </div>
@@ -177,18 +160,18 @@
   </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="../static/assets/js/core/jquery.min.js"></script>
-  <script src="../static/assets/js/core/popper.min.js"></script>
-  <script src="../static/assets/js/core/bootstrap.min.js"></script>
-  <script src="../static/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="assets/js/core/jquery.min.js"></script>
+  <script src="assets/js/core/popper.min.js"></script>
+  <script src="assets/js/core/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   
   <!-- Chart JS -->
-  <script src="../static/assets/js/plugins/chartjs.min.js"></script>
+  <script src="assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
-  <script src="../static/assets/js/plugins/bootstrap-notify.js"></script>
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../static/assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
-
+  <script src="assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+  
 </body>
 
 </html>
