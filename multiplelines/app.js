@@ -224,10 +224,12 @@ function makeResponsive() {
           .attr("transform", `translate(${chartWidth + 40}, ${chartHeight / 2})rotate(90)`)
           .classed(`orange-text label`, true)
           .text(`${choice} Cost at Close`);
-        buildLine(yLinearScale, "orange", 2);
+        let dataArray2 = dataArray;
+        buildLine(yLinearScale, "orange", 2, dataArray2);
       }
       // Configure a line function called drawLine which will plot the x and y coordinates using our scales
       function buildLine(yLinearScale, color, number) {
+        
         let line = d3.line()
           .x(d => xTimeScale(d[1]))
           .y(d => yLinearScale(d[0]));
@@ -245,8 +247,7 @@ function makeResponsive() {
           .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 45 + (number * 20)})`)
           .classed(`${color}-text text`, true)
           .text(`${choice} Cost at Close`);
-
-        if (number == 1) {
+if (number == 1){
           let circlesGroup = chartGroup.selectAll("circle")
             .data(dataArray)
             .enter()
@@ -254,7 +255,7 @@ function makeResponsive() {
             .attr("id", "label1")
             .attr("cx", d => xTimeScale(d[1]))
             .attr("cy", d => yLinearScale(d[0]))
-            .attr("r", "5")
+            .attr("r", "2")
             .attr("fill", `${color}`);
 
           // Step 1: Append a div to the body to create tooltips, assign it a class
@@ -269,25 +270,23 @@ function makeResponsive() {
             toolTip.html(` <strong> ${choice} Cost:${d[0]} <br> Date: ${d[1]}</strong>`)
               .style("left", event.pageX + "px")
               .style("top", event.pageY + "px");
+              toolTip.style("background", `${color}`);
           })
             // Step 3: Add an onmouseout event to make the tooltip invisible
             .on("mouseout", function () {
               toolTip.style("display", "none");
             });
-
-        }
-      else{
-        console.log(5)
-        let circlesGroup2 = chartGroup.selectAll("circle2")
+}
+          else{
+            let circlesGroup2 = chartGroup.selectAll("circle")
             .data(dataArray)
             .enter()
-            .append("circle2")
+            .append("circle")
             .attr("id", "label2")
             .attr("cx", d => xTimeScale(d[1]))
             .attr("cy", d => yLinearScale(d[0]))
-            .attr("r", "5")
+            .attr("r", "2")
             .attr("fill", `${color}`);
-
           // Step 1: Append a div to the body to create tooltips, assign it a class
           // =======================================================
           let toolTip2 = d3.select("body").append("div")
@@ -300,12 +299,14 @@ function makeResponsive() {
             toolTip2.html(` <strong> ${choice} Cost:${d[0]} <br> Date: ${d[1]}</strong>`)
               .style("left", event.pageX + "px")
               .style("top", event.pageY + "px");
+              toolTip.style("background", `${color}`);
           })
             // Step 3: Add an onmouseout event to make the tooltip invisible
             .on("mouseout", function () {
               toolTip2.style("display", "none");
             });
-      }
+          }
+        
       }
       }
     }
