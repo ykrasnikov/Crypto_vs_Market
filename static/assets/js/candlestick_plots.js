@@ -31,12 +31,19 @@ function init() {
             // set the chart title
             chart.title("Bitcoin Historical Price Data");
 
-            // Add the EMA technical indicator
+            // Add the EMA(9) technical indicator
             let plot = chart.plot(0);
-            // create an EMA indicator with period 20
-            let ema20 = plot.ema(mapping, 20).series();
+            // create an EMA indicator with period 9
+            let ema9 = plot.ema(mapping, 9).series();
             // set the EMA color
-            ema20.stroke('#bf360c');
+            ema9.stroke('#bf360c');
+
+            // Add the EMA(30) technical indicator
+            let plot2 = chart.plot(0);
+            // create an EMA indicator with period 30
+            let ema30 = plot.ema(mapping, 30).series();
+            // set the EMA color
+            ema30.stroke('#006400');
 
             // disable the scroller axis
             chart.scroller().xAxis(false);
@@ -57,8 +64,7 @@ function init() {
     });
 }
 
-function clearPlot(elementID)
-{
+function clearPlot(elementID) {
     document.getElementById(elementID).innerHTML = "";
 }
 
@@ -103,12 +109,19 @@ function updatePlot() {
                 // set the chart title
                 chart.title("Bitcoin Historical Price Data");
 
-                // Add the EMA technical indicator
+                // Add the EMA(9) technical indicator
                 let plot = chart.plot(0);
-                // create an EMA indicator with period 20
-                let ema20 = plot.ema(mapping, 20).series();
+                // create an EMA indicator with period 9
+                let ema9 = plot.ema(mapping, 9).series();
                 // set the EMA color
-                ema20.stroke('#bf360c');
+                ema9.stroke('#bf360c');
+
+                // Add the EMA(30) technical indicator
+                let plot2 = chart.plot(0);
+                // create an EMA indicator with period 30
+                let ema30 = plot.ema(mapping, 30).series();
+                // set the EMA color
+                ema30.stroke('#006400');
 
                 // disable the scroller axis
                 chart.scroller().xAxis(false);
@@ -136,7 +149,7 @@ function updatePlot() {
 
             // load data
             anychart.data.loadJsonFile(urlETH, function (data) {
-                
+
                 let ETHData = data.map((element) => ({
                     name: element.Name, symbol: element.Symbol, date: element.Date.$date,
                     open: element.Open, high: element.High, low: element.Low, close: element.Close, volume: element.Volume, mktcap: element.Marketcap
@@ -159,12 +172,19 @@ function updatePlot() {
                 // set the chart title
                 chart.title("Ethereum Historical Price Data");
 
-                // Add the EMA technical indicator
+                // Add the EMA(9) technical indicator
                 let plot = chart.plot(0);
-                // create an EMA indicator with period 20
-                let ema20 = plot.ema(mapping, 20).series();
+                // create an EMA indicator with period 9
+                let ema9 = plot.ema(mapping, 9).series();
                 // set the EMA color
-                ema20.stroke('#bf360c');
+                ema9.stroke('#bf360c');
+
+                // Add the EMA(30) technical indicator
+                let plot2 = chart.plot(0);
+                // create an EMA indicator with period 30
+                let ema30 = plot.ema(mapping, 30).series();
+                // set the EMA color
+                ema30.stroke('#006400');
 
                 // disable the scroller axis
                 chart.scroller().xAxis(false);
@@ -213,12 +233,19 @@ function updatePlot() {
                 // set the chart title
                 chart.title("Litecoin Historical Price Data");
 
-                // Add the EMA technical indicator
+                // Add the EMA(9) technical indicator
                 let plot = chart.plot(0);
-                // create an EMA indicator with period 20
-                let ema20 = plot.ema(mapping, 20).series();
+                // create an EMA indicator with period 9
+                let ema9 = plot.ema(mapping, 9).series();
                 // set the EMA color
-                ema20.stroke('#bf360c');
+                ema9.stroke('#bf360c');
+
+                // Add the EMA(30) technical indicator
+                let plot2 = chart.plot(0);
+                // create an EMA indicator with period 30
+                let ema30 = plot.ema(mapping, 30).series();
+                // set the EMA color
+                ema30.stroke('#006400');
 
                 // disable the scroller axis
                 chart.scroller().xAxis(false);

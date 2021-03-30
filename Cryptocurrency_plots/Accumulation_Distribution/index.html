@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset = "utf-8">
+        <title>html placeholder</title>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-stock.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js"></script>
+        <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+        <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+        <style type="text/css">
+
+            html,
+            body,
+            #plot4 {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <select id="datasetSelection">
+            <option value="bitcoin">Bitcoin</option>
+            <option value="ethereum">Ethereum</option>
+            <option value="litecoin">Litecoin</option>
+            <option value="gold">Gold</option>
+            <option value="sNp">S&P 500</option>
+        </select>
+        <div id = "plot4">
+            
+        </div>
+        <script src = "https://d3js.org/d3.v6.min.js"></script>
+        <script type = "text/javascript" src="accumulationDistribution.js"></script>
+    </body>
+</html>

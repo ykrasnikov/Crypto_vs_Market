@@ -1,12 +1,29 @@
 .col-md-12 {
-    height: 500px;
+    height: 600px;
 }
 
-#selDataset{
+#selDataset {
     margin-top: 10px;
     margin-left: 20px;
 }
 
 #plot {
-    height: 400px;
+    height: 500px;
 }
+
+.dropdown-menu {
+    background-color: white;
+}
+
+#plot2 {
+    height: 530px;
+}
+
+#plot3 {
+    height: 530px;
+}
+
+#plot4 {
+    height: 530px;
+}
+
