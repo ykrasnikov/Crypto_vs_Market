@@ -274,7 +274,7 @@ function makeResponsive() {
             toolTip.style("display", "block");
             // let print = dataArray2.filter(word => word[1] == d[1])
             toolTip.html(` <strong> ${choice} Cost,Date:${d[0]},${d[1]} <br> Cost,Date: ${print}</strong>`)
-              .style("left", chartWidth/2 + "px")
+              .style("left", (event.pageX -40)+ "px")
               .style("top", (margin.top+20) + "px");
               toolTip.style("background", `${color}`)
               
