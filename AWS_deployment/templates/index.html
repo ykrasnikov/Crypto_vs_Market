@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+
+    <title>TEST API </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+<h1> open console</h1>
+</body>
+<script>
+    // fetch('http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com//api/gold/',{method:'get'})
+    //   .then(res=> res.json())
+    //   .then(data=> {
+    //     // console.log(data);
+    //     data.forEach(record => {
+    //       let date=convertTime(record.Date.$date)
+    //       console.log(date)
+    //     });
+    //   })
+
+    let payload={
+          'collection':{'collection1':['ticker1','ticker2'],
+                        'collection2':['ticker3','ticker4']},
+          'start_date':'date1',
+          'stop_date':'date2',
+          'data_type':['Name',
+                         'Symbol',
+                         'Date',
+                         'High',
+                         'Low',
+                         'Open',
+                         'Close',
+                         'Volume',
+                         'Marketcap']
+     };
+    //  console.log(JSON.stringify(payload))
+    fetch('/api/payload/',{
+      method:'POST',
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      },
+      body: JSON.stringify(payload),
+        })
+      .then(res=> res.json())
+      .then(data => {
+          console.log('Success:', data);
+        })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+       
+    
+      
+function convertTime(unixTime) {
+        let dateObject=new Date(unixTime),
+        // full date & time
+          // date=dateObject.toDateString();
+        //  date, time & time zone 
+        //date=dateObject.toLocaleString("en-US", {timeZoneName: "short"});
+        // month -date-year
+        d=dateObject.getDate(),
+        m=dateObject.getMonth()+1,
+        y=dateObject.getFullYear(),
+        date=m+'-'+d+'-'+y;
+        return date;
+}
+  </script>
+</html>

@@ -1,0 +1,12 @@
+.col-md-12 {
+    height: 500px;
+}
+
+#selDataset{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#plot {
+    height: 400px;
+}
