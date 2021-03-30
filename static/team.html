@@ -34,8 +34,7 @@
   <!-- CSS Files -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="assets/demo/demo.css" rel="stylesheet" />
+
 </head>
 
 <body class="">
@@ -62,9 +61,8 @@
             </a>
           </li>
           <li>
-            <li class="active">
-              <a href="/">
-                <i class="active"></i>
+            <a href="visualizations.html">
+              <i class="now-ui-icons business_chart-bar-32"></i>
               <p>Visualizations</p>
             </a>
           <li>
@@ -73,8 +71,9 @@
               <p>API</p>
             </a>
           <li>
-            <a href="team.html">
-              <i class="now-ui-icons users_single-02"></i>
+          <li class="active">
+            <a href="/">
+              <i class="active"></i>
               <p>Team Members</p>
             </a>
           </li>
@@ -107,9 +106,9 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="../templates/index.html">Dashboard</a>
-              <a class="dropdown-item" href="#">Visualizations</a>
+              <a class="dropdown-item" href="visualizations.html">Visualizations</a>
               <a class="dropdown-item" href="api.html">API</a>
-              <a class="dropdown-item" href="team.html">Team Members</a>
+              <a class="dropdown-item" href="#">Team Members</a>
             </div>
           </div>
 
@@ -120,32 +119,110 @@
       <!-- content goes here -->
       <div class="panel-header panel-header-sm">
       </div>
+
       <div class="content">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card ">
-              <div class="card-header ">
-                Cryptocurrency Plot
-              </div>
-              <div class="card-body ">
-                <div id="plot" ></div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card card-user">
+                <div class="image">
+                  <img src="assets/img/stock.png" alt="..." />
+                </div>
+                <div class="content">
+                  <div class="author">
+                    <a href="https://www.linkedin.com/in/yakov-krasnikov-a6b24047/" target="_blank">
+                      <img class="avatar border-gray" src="assets/img/yakov.png" alt="..." />
+
+                      <h4 class="title">Yakov Krasnikov</h4>
+                    </a>
+                  </div>
+                  <p class="description text-center">Data Scientist</p>
+                </div>
+                <hr>
               </div>
             </div>
-          </div>
+            <div class="col-md-4">
+              <div class="card card-user">
+                <div class="image">
+                  <img src="assets/img/stock.png" alt="..." />
+                </div>
+                <div class="content">
+                  <div class="author">
+                    <a href="https://www.linkedin.com/in/justin-merryman-72549564/" target="_blank">
+                      <img class="avatar border-gray" src="assets/img/justin.png" alt="..." />
 
-          <div class="col-md-12">
-            <div class="card ">
-              <div class="card-header ">
-                Cryptocurrency Plot 2
+                      <h4 class="title">Justin Merryman</h4>
+                    </a>
+                  </div>
+                  <p class="description text-center">Data Scientist</p>
+                </div>
+                <hr>
               </div>
-              <div class="card-body ">
-                <div id="plot2" ></div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-user">
+                <div class="image">
+                  <img src="assets/img/stock.png" alt="..." />
+                </div>
+                <div class="content">
+                  <div class="author">
+                    <a href="https://www.linkedin.com/in/charlesphilpott/" target="_blank">
+                      <img class="avatar border-gray" src="assets/img/charles.png" alt="..." />
+
+                      <h4 class="title">Charles Philpott</h4>
+                    </a>
+                  </div>
+                  <p class="description text-center">Data Scientist</p>
+                </div>
+                <hr>
               </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-user">
+                <div class="image">
+                  <img src="assets/img/stock.png" alt="..." />
+                </div>
+                <div class="content">
+                  <div class="author">
+                    <a href="https://github.com/BaudOptics" target="_blank">
+                      <img class="avatar border-gray" src="assets/img/alex.jpg" alt="..." />
+
+                      <h4 class="title">Alex Jones</h4>
+                    </a>
+                  </div>
+                  <p class="description text-center">Data Scientist</p>
+                </div>
+                <hr>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-user">
+                <div class="image">
+                  <img src="assets/img/stock.png" alt="..." />
+                </div>
+                <div class="content">
+                  <div class="author">
+                    <a href="https://github.com/jessicapardo" target="_blank">
+                      <img class="avatar border-gray" src="assets/img/jessica.jpg" alt="..." />
+
+                      <h4 class="title">Jessica Pardo</h4>
+                    </a>
+                  </div>
+                  <p class="description text-center">Geoscientist | Data Analyst</p>
+                </div>
+                <hr>
+              </div>
+            </div>
+            
             </div>
           </div>
         </div>
       </div>
+
+
+
     </div>
+  </div>
   </div>
 
 
@@ -157,23 +234,14 @@
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap.min.js"></script>
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
   <!-- Chart JS -->
   <script src="assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
-  <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-  <script src="assets/demo/demo.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
 
-    });
-  </script>
 </body>
 
 </html>
