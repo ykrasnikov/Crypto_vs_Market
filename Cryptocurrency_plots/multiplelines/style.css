@@ -7,8 +7,8 @@
   stroke: orange;
 }
 
-.green {
-  stroke: green;
+.blue {
+  stroke: blue;
 }
 
 .text {
@@ -20,8 +20,8 @@
   stroke: orange;
 }
 
-.green-text {
-  fill: green;
+.blue-text {
+  fill: blue;
 }
 
 .label {
@@ -33,8 +33,8 @@
 .tooltip {
   display: none;
   position: absolute;
-  width: 100px;
-  height: 90px;
+  width: 200px;
+  height: 20px;
   padding: 2px;
   font: 12px sans-serif;
   text-align: center;
