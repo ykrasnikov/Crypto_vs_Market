@@ -1,6 +1,6 @@
 function makeResponsive() {
-  // scrapeData('BTC', 1, "01-01-2013", "01-01-2021");
-  // scrapeData('LTC', 2, "01-01-2013", "01-01-2021");
+  scrapeData('BTC', 1, "01-01-2013", "03-01-2014");
+  scrapeData('LTC', 2, "01-01-2013", "03-01-2014");
 
 
   d3.selectAll("#selDataset").on("change", updateChoice);
@@ -31,11 +31,15 @@ function makeResponsive() {
   //Scrape data function
   function scrapeData(coin, choiceNum, startYear, endYear) {
     const baseLink = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api"
-    if (coin == "none") {
+    if (coin == "None Selected") {
       if (choiceNum == 1) {
-        graphData(coin, coin, coin)
+        let link = `${baseLink}/crypto/${coin}/01-01-2013,03-01-2014`
+
+        testlink(link)
       }
-      else { graphData(coin, coin, coin) }
+      else { let link = `${baseLink}/crypto/${coin}/01-01-2013,03-01-2014`
+
+      testlink(link) }
     }
     else if (coin == "BTC" || coin == "LTC" || coin == "ETH") {
       let link = `${baseLink}/crypto/${coin}/${startYear},${endYear}`
@@ -43,7 +47,7 @@ function makeResponsive() {
       testlink(link);
     }
     else {
-      let link = `${baseLink}/${coin}/`
+      let link = `${baseLink}/${coin}/${startYear},${endYear}`
       testlink(link);
     }
     function testlink(link) {
@@ -201,9 +205,9 @@ function makeResponsive() {
         chartGroup.append("text")
           .attr("id", "yLeft")
           .attr("transform", `translate(${-60}, ${chartHeight / 2})rotate(270)`)
-          .classed(`green-text label`, true)
+          .classed(`blue-text label`, true)
           .text(`${choice} Cost at Close`);
-        buildLine(yLinearScale, "green", 1);
+        buildLine(yLinearScale, "blue", 1, dataArray);
       }
       //Creates y axis and graph 2  
       else {
@@ -228,7 +232,7 @@ function makeResponsive() {
         buildLine(yLinearScale, "orange", 2, dataArray2);
       }
       // Configure a line function called drawLine which will plot the x and y coordinates using our scales
-      function buildLine(yLinearScale, color, number) {
+      function buildLine(yLinearScale, color, number, dataArray) {
         
         let line = d3.line()
           .x(d => xTimeScale(d[1]))
@@ -247,7 +251,7 @@ function makeResponsive() {
           .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 45 + (number * 20)})`)
           .classed(`${color}-text text`, true)
           .text(`${choice} Cost at Close`);
-if (number == 1){
+          
           let circlesGroup = chartGroup.selectAll("circle")
             .data(dataArray)
             .enter()
@@ -265,47 +269,23 @@ if (number == 1){
 
           // Step 2: Add an onmouseover event to display a tooltip
           // ========================================================
+          
           circlesGroup.on("mouseover", function (event, d) {
             toolTip.style("display", "block");
-            toolTip.html(` <strong> ${choice} Cost:${d[0]} <br> Date: ${d[1]}</strong>`)
-              .style("left", event.pageX + "px")
-              .style("top", event.pageY + "px");
-              toolTip.style("background", `${color}`);
+            // let print = dataArray2.filter(word => word[1] == d[1])
+            toolTip.html(` <strong> ${choice} Cost,Date:${d[0]},${d[1]} <br> Cost,Date: ${print}</strong>`)
+              .style("left", chartWidth/2 + "px")
+              .style("top", (margin.top+20) + "px");
+              toolTip.style("background", `${color}`)
+              
+              ;
+          
+              
           })
             // Step 3: Add an onmouseout event to make the tooltip invisible
             .on("mouseout", function () {
               toolTip.style("display", "none");
             });
-}
-          else{
-            let circlesGroup2 = chartGroup.selectAll("circle")
-            .data(dataArray)
-            .enter()
-            .append("circle")
-            .attr("id", "label2")
-            .attr("cx", d => xTimeScale(d[1]))
-            .attr("cy", d => yLinearScale(d[0]))
-            .attr("r", "2")
-            .attr("fill", `${color}`);
-          // Step 1: Append a div to the body to create tooltips, assign it a class
-          // =======================================================
-          let toolTip2 = d3.select("body").append("div")
-            .attr("class", "tooltip");
-
-          // Step 2: Add an onmouseover event to display a tooltip
-          // ========================================================
-          circlesGroup2.on("mouseover", function (event, d) {
-            toolTip2.style("display", "block");
-            toolTip2.html(` <strong> ${choice} Cost:${d[0]} <br> Date: ${d[1]}</strong>`)
-              .style("left", event.pageX + "px")
-              .style("top", event.pageY + "px");
-              toolTip.style("background", `${color}`);
-          })
-            // Step 3: Add an onmouseout event to make the tooltip invisible
-            .on("mouseout", function () {
-              toolTip2.style("display", "none");
-            });
-          }
         
       }
       }
