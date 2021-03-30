@@ -163,7 +163,59 @@
                 Plot 3
               </div>
               <div class="card-body ">
-                <div id="plot3"></div>
+                <div id="plot3">
+                  <div class="chart"></div>
+                  <select id="selDataset">
+                    <option value="None Selected">Select Data 1</option>
+                    <option value="gold">Gold</option>
+                    <option value="dollar">Dollar</option>
+                    <option value="snp500">S&P 500</option>
+                    <option value="vix">VIX</option>
+                    <option value="BTC">Bitcoin</option>
+                    <option value="LTC">Litecoin</option>
+                    <option value="ETH">Etherum</option>
+                  </select>
+                  <select id="selDataset2">
+                    <option value="None Selected">Select Data 2</option>
+                    <option value="gold">Gold</option>
+                    <option value="dollar">Dollar</option>
+                    <option value="snp500">S&P 500</option>
+                    <option value="vix">VIX</option>
+                    <option value="BTC">Bitcoin</option>
+                    <option value="LTC">Litecoin</option>
+                    <option value="ETH">Etherum</option>
+                  </select>
+                  <select id="startyear">
+                    <option value="01-01-2013">Start Year</option>
+                    <option value="01-01-2013">2013</option>
+                    <option value="01-01-2014">2014</option>
+                    <option value="01-01-2015">2015</option>
+                    <option value="01-01-2016">2016</option>
+                    <option value="01-01-2017">2017</option>
+                    <option value="01-01-2018">2018</option>
+                    <option value="01-01-2019">2019</option>
+                    <option value="01-01-2020">2020</option>
+                    <option value="01-01-2021">2021</option>
+                    <option value="01-01-2021">Current</option>
+                  </select>
+                  <select id="endyear">
+                    <option value="01-01-2021">End Year</option>
+                    <option value="01-01-2013">2013</option>
+                    <option value="01-01-2014">2014</option>
+                    <option value="01-01-2015">2015</option>
+                    <option value="01-01-2016">2016</option>
+                    <option value="01-01-2017">2017</option>
+                    <option value="01-01-2018">2018</option>
+                    <option value="01-01-2019">2019</option>
+                    <option value="01-01-2020">2020</option>
+                    <option value="01-01-2021">2021</option>
+                    <option value="03-01-2021">Current</option>
+                    
+                  </select>
+                  
+                  <script src="../static/assets/js/multiline.js"></script>
+                  
+                </div>
               </div>
             </div>
           </div>
@@ -201,7 +253,10 @@
   <script src="../static/assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../static/assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
-
+  
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+  <script src="../static/assets/css/multiline.css"></script>
 </body>
 
 </html>
