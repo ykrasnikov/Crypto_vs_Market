@@ -4,11 +4,11 @@
 }
 
 .orange {
-  stroke: orange;
+  stroke: #ec6e07;
 }
 
 .blue {
-  stroke: blue;
+  stroke: #64b5f6;
 }
 
 .text {
@@ -17,11 +17,11 @@
 }
 
 .orange-text {
-  stroke: orange;
+  stroke: #ec6e07;
 }
 
 .blue-text {
-  fill: blue;
+  fill: #64b5f6;
 }
 
 .label {
