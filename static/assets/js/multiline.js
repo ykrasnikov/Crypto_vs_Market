@@ -1,6 +1,6 @@
 
-  scrapeData('ETH', 1, "01-01-2013", "03-01-2014");
-  scrapeData('ETH', 2, "01-01-2013", "03-01-2014");
+  scrapeData('BTC', 1, "01-01-2013", "03-01-2021");
+  scrapeData('LTC', 2, "01-01-2013", "03-01-2021");
   
 
   d3.selectAll("#selmultiDataset1").on("change", updateChoice);
@@ -93,9 +93,9 @@
 
   let margin = {
     top: 30,
-    right: 100,
-    bottom: 100,
-    left: 100
+    right: 60,
+    bottom: 50,
+    left: 60
   };
 
   let chartHeight = svgHeight - margin.top - margin.bottom;
@@ -209,7 +209,7 @@
           .call(leftAxis);
         chartGroup.append("text")
           .attr("id", "yLeft")
-          .attr("transform", `translate(${-60}, ${chartHeight / 2})rotate(270)`)
+          .attr("transform", `translate(${-50}, ${chartHeight * 0.5})rotate(270)`)
           .classed(`blue-text label`, true)
           .text(`${choice} Cost at Close`);
         buildLine(yLinearScale, "blue", 1, dataArray);
@@ -250,12 +250,12 @@
           .attr('id', `line${number}`)
           .classed(`line ${color}`, true);
 
-        // Appends Line titles to bottom of graph
-        chartGroup.append("text")
-          .attr("id", `lineName${number}`)
-          .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 45 + (number * 20)})`)
-          .classed(`${color}-text text`, true)
-          .text(`${choice} Cost at Close`);
+        // // Appends Line titles to bottom of graph
+        // chartGroup.append("text")
+        //   .attr("id", `lineName${number}`)
+        //   .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 45 + (number * 20)})`)
+        //   .classed(`${color}-text text`, true)
+        //   .text(`${choice} Cost at Close`);
 
         let circlesGroup = chartGroup.selectAll("circle")
           .data(dataArray)
@@ -298,3 +298,4 @@
 
 // When the browser window is resized, responsify() is called.
 // d3.select("window").on("resize", makeResponsive);
+
