@@ -64,7 +64,7 @@ function init() {
                     }
                 
                     // Call updatePlotly() when a change takes place to the DOM
-                    d3.selectAll("#selDataset2").on("change", updatePlot);
+                    d3.selectAll("#selDataset3").on("change", updatePlot);
                     
                       // Update plot
                       function updatePlot() {
@@ -73,7 +73,7 @@ function init() {
                         clearPlot('plot');
                         
                         // Use D3 to select the dropdown menu
-                        let dropdownMenu = d3.select("#selDataset2");
+                        let dropdownMenu = d3.select("#selDataset3");
                         
                         // Assign the value of the dropdown menu option to a variable
                         let source = dropdownMenu.property("value");
