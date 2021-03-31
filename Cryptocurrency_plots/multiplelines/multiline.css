@@ -1,0 +1,43 @@
+.line {
+  fill: none;
+  stroke-width: 2px;
+}
+
+.orange {
+  stroke: #ec6e07;
+}
+
+.blue {
+  stroke: #64b5f6;
+}
+
+.text {
+  font-size: 16px;
+  text-anchor: middle;
+}
+
+.orange-text {
+  stroke: #ec6e07;
+}
+
+.blue-text {
+  fill: #64b5f6;
+}
+
+.label {
+  font-size: 30px;
+  text-anchor: middle;
+  font-weight: 200;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  padding: 2px;
+  font: 12px sans-serif;
+  text-align: center;
+  border: 0;
+  border-radius: 10px;
+}

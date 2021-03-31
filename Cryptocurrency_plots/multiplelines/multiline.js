@@ -173,7 +173,7 @@ function makeResponsive() {
     }
     //Build data array from user selection
     function buildGraph(dataArray, choice, numChoice, dataArray2) {
-      console.log(dataArray2)
+
       // Configure a time scale
       // d3.extent returns the an array containing the min and max values for the property specified
       let xTimeScale = d3.scaleTime()
@@ -281,7 +281,7 @@ function makeResponsive() {
           toolTip.html(` <strong> ${choice} Cost:${d[0]}, <br> Date: ${d[1]}</strong>`)
             .style("left", (event.pageX - 40) + "px")
             .style("top", (event.pageY + 20) + "px");
-          // toolTip.style("background", `#ec6e07`)
+          // toolTip.style("background", `${color}`)
 
           ;
 
