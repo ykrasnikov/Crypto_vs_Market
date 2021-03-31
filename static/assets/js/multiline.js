@@ -114,7 +114,7 @@ function makeResponsive(width, height){
     top: 30,
     right: 60,
     bottom: 50,
-    left: 60
+    left: 70
   };
 
   let chartHeight = svgHeight - margin.top - margin.bottom;

@@ -1,6 +1,22 @@
+let height = plot3.offsetHeight;
+let width = plot3.offsetWidth;
+makeResponsive(width, height);
 
-  scrapeData('ETH', 1, "01-01-2013", "03-01-2014");
-  scrapeData('ETH', 2, "01-01-2013", "03-01-2014");
+// Event listener for window resize.
+// When the browser window is resized, makeResponsive() is called.
+d3.select(window).on("resize", getSize);
+
+function getSize(){
+
+  console.log("window changed");
+  let height = plot3.offsetHeight;
+  let width = plot3.offsetWidth;
+  makeResponsive(width, height)
+}
+
+function makeResponsive(width, height){
+  scrapeData('BTC', 1, "01-01-2013", "03-01-2021");
+  scrapeData('LTC', 2, "01-01-2013", "03-01-2021");
   
 
   d3.selectAll("#selmultiDataset1").on("change", updateChoice);
@@ -80,25 +96,25 @@
     };
   }
 
-  let svgArea = d3.select("col-md-12");
-  // if (!svgArea.empty()) {
-  //   svgArea.remove();
-  // }
+  let svgArea = d3.select("body").select("#plot3").select("svg");
+  console.log(svgArea);  
+  if (!svgArea.empty()) {
+    svgArea.remove();
+  }
 
   // SVG wrapper dimensions are determined by the current width
   // and height of the browser window.
-
-  let svgWidth = +svgArea.style("width");
-  let svgHeight = +svgArea.style("height");
-  console.log(svgWidth, svgHeight)
-  // let svgWidth = 900;
-  // let svgHeight = 500;
+  // let svgWidth = plot3.offsetWidth;
+  // let svgHeight = plot3.offsetHeight;
+  let svgHeight = height;
+  let svgWidth = width;
+  
 
   let margin = {
     top: 30,
-    right: 100,
-    bottom: 100,
-    left: 100
+    right: 60,
+    bottom: 50,
+    left: 70
   };
 
   let chartHeight = svgHeight - margin.top - margin.bottom;
@@ -107,6 +123,7 @@
   // Select body, append SVG area to it, and set its dimensions
   let svg = d3.select("#plot3")
     .append("svg")
+    
     .attr("width", svgWidth)
     .attr("height", svgHeight);
 
@@ -177,7 +194,7 @@
     }
     //Build data array from user selection
     function buildGraph(dataArray, choice, numChoice, dataArray2) {
-      console.log(dataArray2)
+
       // Configure a time scale
       // d3.extent returns the an array containing the min and max values for the property specified
       let xTimeScale = d3.scaleTime()
@@ -212,7 +229,7 @@
           .call(leftAxis);
         chartGroup.append("text")
           .attr("id", "yLeft")
-          .attr("transform", `translate(${-60}, ${chartHeight / 2})rotate(270)`)
+          .attr("transform", `translate(${-50}, ${chartHeight * 0.5})rotate(270)`)
           .classed(`blue-text label`, true)
           .text(`${choice} Cost at Close`);
         buildLine(yLinearScale, "blue", 1, dataArray);
@@ -241,7 +258,7 @@
       }
       // Configure a line function called drawLine which will plot the x and y coordinates using our scales
       function buildLine(yLinearScale, color, number, dataArray) {
-        
+
         let line = d3.line()
           .x(d => xTimeScale(d[1]))
           .y(d => yLinearScale(d[0]));
@@ -253,53 +270,53 @@
           .attr('id', `line${number}`)
           .classed(`line ${color}`, true);
 
-        // Appends Line titles to bottom of graph
-        chartGroup.append("text")
-          .attr("id", `lineName${number}`)
-          .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 45 + (number * 20)})`)
-          .classed(`${color}-text text`, true)
-          .text(`${choice} Cost at Close`);
-
-        let circlesGroup = chartGroup.selectAll("circle")
+        // // Appends Line titles to bottom of graph
+        // chartGroup.append("text")
+        //   .attr("id", `lineName${number}`)
+        //   .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 45 + (number * 20)})`)
+        //   .classed(`${color}-text text`, true)
+        //   .text(`${choice} Cost at Close`);
+    let circlesGroup = chartGroup.selectAll("circle")
           .data(dataArray)
           .enter()
           .append("circle")
           .attr("id", "label1")
           .attr("cx", d => xTimeScale(d[1]))
           .attr("cy", d => yLinearScale(d[0]))
-          .attr("r", "2")
-          .classed(`${color} label`, true);
+          .attr("r", "0.5")
+          .classed(`${color} label`, true)
+          .on("click", function(event, d) {
+            d3.select(".result")
+            .attr("font-size", "16px")
+            .text(`${choice} Cost: ${d[0]}`);
+            d3.select(".result2")
+            .attr("font-size", "16px")
+            .text(`Date: ${d[1]}`)
+            
+          })
+          
+        // // Step 1: Append a div to the body to create tooltips, assign it a class
+        // // =======================================================
+        // let toolTip = d3.select("#plot3").append("div")
+        //   .attr("class", "tooltip", true);
+        // // d3.select(".result").append("text")
+        // //     .attr("font-size", "16px")
+        // //     .text("is this working");
+        // // Step 2: Add an onmouseover event to display a tooltip
+        // // ========================================================
 
-        // Step 1: Append a div to the body to create tooltips, assign it a class
-        // =======================================================
-        let toolTip = d3.select("#plot3").append("div")
-          .attr("class", "tooltip");
-
-        // Step 2: Add an onmouseover event to display a tooltip
-        // ========================================================
-
-        circlesGroup.on("mouseover", function (event, d) {
-          toolTip.style("display", "block");
-          // let print = dataArray2.filter(word => word[1] == d[1])
-         
-          toolTip.html(` <strong> ${choice} Cost:${d[0]}, <br> Date: ${d[1]}</strong>`)
-            .style("left", (event.pageX - 40) + "px")
-            .style("top", (event.pageY + 20) + "px");
-          // toolTip.style("background", `#ec6e07`)
-
-          ;
-
-        })
-          // Step 3: Add an onmouseout event to make the tooltip invisible
-          .on("mouseout", function () {
-            toolTip.style("display", "none");
-          });
+        // circlesGroup.on("mouseover", function (event, d) {
+        //   // let print = dataArray2.filter(word => word[1] == d[1])
+        //   toolTip.html(`<strong> ${choice} Cost:${d[0]}, <br> Date: ${d[1]}</strong>`)
+        //     .style("left", (event.pageX) + "px")
+        //     .style("top", (event.pageY) + "px");
+        //   // toolTip.style("background", `${color}`
+        // })
+        //   // Step 3: Add an onmouseout event to make the tooltip invisible
+        //   .on("mouseout", function () {
+        //     toolTip.style("display", "none");
+        //   });
       }
     }
   }
-
-// When the browser loads, makeResponsive() is called.
-// makeResponsive();
-
-// When the browser window is resized, responsify() is called.
-// d3.select("#plot3").on("resize", makeResponsive);
+};
