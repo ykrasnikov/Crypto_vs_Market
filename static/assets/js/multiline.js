@@ -1,8 +1,7 @@
-
 function makeResponsive() {
   scrapeData('ETH', 1, "01-01-2013", "03-01-2014");
   scrapeData('ETH', 2, "01-01-2013", "03-01-2014");
-
+  
 
   d3.selectAll("#selmultiDataset1").on("change", updateChoice);
   d3.selectAll("#startyear").on("change", updateChoice);
