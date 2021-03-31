@@ -80,19 +80,16 @@
     };
   }
 
-  let svgArea = d3.select("col-md-12");
-  // if (!svgArea.empty()) {
-  //   svgArea.remove();
-  // }
+  let svgArea = d3.select("#plot3").select("svg");
+  
+  if (!svgArea.empty()) {
+    svgArea.remove();
+  }
 
   // SVG wrapper dimensions are determined by the current width
   // and height of the browser window.
-
-  let svgWidth = +svgArea.style("width");
-  let svgHeight = +svgArea.style("height");
-  console.log(svgWidth, svgHeight)
-  // let svgWidth = 900;
-  // let svgHeight = 500;
+  let svgWidth = plot3.offsetWidth;
+  let svgHeight = plot3.offsetHeight;
 
   let margin = {
     top: 30,
@@ -177,7 +174,7 @@
     }
     //Build data array from user selection
     function buildGraph(dataArray, choice, numChoice, dataArray2) {
-      console.log(dataArray2)
+
       // Configure a time scale
       // d3.extent returns the an array containing the min and max values for the property specified
       let xTimeScale = d3.scaleTime()
@@ -272,23 +269,21 @@
 
         // Step 1: Append a div to the body to create tooltips, assign it a class
         // =======================================================
-        let toolTip = d3.select("#plot3").append("div")
-          .attr("class", "tooltip");
+        let toolTip = d3.select("#chart").append("div")
+          .attr("class", "tooltip", true);
 
         // Step 2: Add an onmouseover event to display a tooltip
         // ========================================================
 
         circlesGroup.on("mouseover", function (event, d) {
+        
           toolTip.style("display", "block");
           // let print = dataArray2.filter(word => word[1] == d[1])
-         
-          toolTip.html(` <strong> ${choice} Cost:${d[0]}, <br> Date: ${d[1]}</strong>`)
-            .style("left", (event.pageX - 40) + "px")
-            .style("top", (event.pageY + 20) + "px");
-          // toolTip.style("background", `#ec6e07`)
-
-          ;
-
+          console.log(d[0])
+          toolTip.html(`<strong> ${choice} Cost:${d[0]}, <br> Date: ${d[1]}</strong>`)
+            .style("left", (event.pageX) + "px")
+            .style("top", (event.pageY) + "px");
+          // toolTip.style("background", `${color}`
         })
           // Step 3: Add an onmouseout event to make the tooltip invisible
           .on("mouseout", function () {
@@ -302,4 +297,4 @@
 // makeResponsive();
 
 // When the browser window is resized, responsify() is called.
-// d3.select("#plot3").on("resize", makeResponsive);
+// d3.select("window").on("resize", makeResponsive);
