@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Line Chart with Time Axis</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="multiline.css">>
 </head>
 <body>
   <div class="chart"></div>
-  <select id="selDataset">
+  <select id="selmultiDataset1">
     <option value="None Selected">Select Data 1</option>
     <option value="gold">Gold</option>
     <option value="dollar">Dollar</option>
@@ -19,7 +19,7 @@
     <option value="LTC">Litecoin</option>
     <option value="ETH">Etherum</option>
   </select>
-  <select id="selDataset2">
+  <select id="selmultiDataset2">
     <option value="None Selected">Select Data 2</option>
     <option value="gold">Gold</option>
     <option value="dollar">Dollar</option>
@@ -54,13 +54,13 @@
     <option value="01-01-2020">2020</option>
     <option value="01-01-2021">2021</option>
     <option value="03-01-2021">Current</option>
+  </select>
+    <div id = "plot3" ></div>
     <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-  <script src="app.js"></script>
-  </select>
+  <script src="multiline.js"></script>
+  
 
-  <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-  <script src="app.js"></script>
+  
 </body>
 </html>
