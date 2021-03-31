@@ -31,11 +31,18 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Anychart -->
+  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-stock.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-data-adapter.min.js"></script>
+
   <!-- CSS Files -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="assets/demo/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body class="">
@@ -49,14 +56,14 @@
 
       <div class="sidebar-wrapper">
         <div class="logo">
-          <a href="/" class="simple-text">
+          <a href="../templates/index.html" class="simple-text">
             Cryptocurrency vs Market
           </a>
         </div>
 
         <ul class="nav">
           <li>
-            <a href="/">
+            <a href="../templates/index.html">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
@@ -64,21 +71,20 @@
           <li>
             <a href="api.html">
               <i class="now-ui-icons design_bullet-list-67"></i>
-          
               <p>API</p>
             </a>
-          </li>
           <li>
             <a href="team.html">
               <i class="now-ui-icons users_single-02"></i>
               <p>Team Members</p>
             </a>
-          </li>
           <li>
-            <a href="../static/glossary.html">
-              <i class="now-ui-icons files_single-copy-04"></i>
+          <li class="active">
+            <a href="/">
+              <i class="active"></i>
               <p>Glossary</p>
             </a>
+          </li>
           </li>
         </ul>
       </div>
@@ -97,7 +103,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Dashboard</a>
+            <a class="navbar-brand" href="../templates/index.html">Dashboard</a>
           </div>
           <!-- Dropdown button -->
           <div class="nav-item dropdown">
@@ -107,10 +113,10 @@
               Dropdown
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/">Dashboard</a>
+              <a class="dropdown-item" href="../templates/index.html">Dashboard</a>
               <a class="dropdown-item" href="api.html">API</a>
               <a class="dropdown-item" href="team.html">Team Members</a>
-              <a class="dropdown-item" href="glossary.html">Glossary</a>
+              <a class="dropdown-item" href="#">Glossary</a>
             </div>
           </div>
 
@@ -121,28 +127,65 @@
       <!-- content goes here -->
       <div class="panel-header panel-header-sm">
       </div>
+
       <div class="content">
         <div class="row">
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header ">
-                <h4>API Routes</h2>
-              
+                Glossary
               </div>
               <div class="card-body ">
-                <div id="plot" ></div>
-                <div class='table'id="table">
+                <div id="container"></div>
 
-                </div>
+                <p><b>Candlestick chart</b> is a style of financial chart used to describe price movements of a
+                  security, derivative, or
+                  currency. Each "candlestick" typically shows one day, thus a one-month chart may show the 20 trading
+                  days as 20 candlesticks.</p>
+
+                <p><b>Exponential Moving Average (EMA)</b> is an average price calculation over a specific time period
+                  that
+                  puts more weight on the most recent price data causing it to react faster to price change.
+                </p>
+
+                <p><b>Exponential Moving Average Strategy</b> is the oldest form of technical analysis. It is one of the
+                  most popular trading indicators used by thousands of traders. Here are the strategy steps for trading
+                  rules – sell trade:<br>
+                  1. Plot on your chart the 9-period and 30-period EMA. <br>
+                  2. Buy when the 9-period EMA crosses from below to above the 30-period EMA<br>
+                  3. For a sell trade, sell when the 9-period EMA crosses from above to below the 30-period EMA.<br>
+                  For more information visit: <a
+                    href="https://tradingstrategyguides.com/exponential-moving-average-strategy/" target="_blank">How to Trade With
+                    Exponential Moving Average Strategy</a>
+                </p>
+
+                <p><b>Envelope chart</b> Envelopes are technical indicators that are typically plotted over a price<br> 
+                  chart with upper and lower bounds. The most common example of an envelope is a moving average envelope,<br>
+                  which is created using two moving averages that define upper and lower price range levels.<br> 
+                  Envelopes are commonly used to help traders and investors identify extreme overbought and oversold<br> 
+                  conditions as well as trading ranges.</p>
+
+                <p><b>KEY ENVELOPE CHART TAKEAWAYS</b><br>
+                  &emsp;1.  An envelope, in technical analysis, refers to trend lines plotted both above and below the current price.<br>
+                  &emsp;2.  An envelope's upper and lower bands are typically generated by a simple moving average and a pre-determined<br>
+                  &emsp;distance above and below the moving average—but can be created using any number of other techniques.<br>
+                  &emsp;3.  Many traders react to a sell signal when price reaches or crosses the upper band and a buy signal when price<br>
+                  &emsp;reaches or crosses the lower band of an envelope channel.</p>
+
+                <p><b>For more information visit:</b><br>
+                  &emsp;<a href="https://www.investopedia.com/terms/t/technicalindicator.asp" target="_blank">Technical Incidator Definition</a><br>
+                  &emsp;Technical indicators are mathematical calculations based on the price, volume, or open interest of a security or contract.<br><br>
+                  &emsp;<a href="https://www.investopedia.com/terms/m/movingaverage.asp" target="_blank">Moving Average (MA) Definition</a><br>
+                  &emsp;A moving average is a technical analysis indicator that helps smooth out price action by filtering out the “noise” from<br> 
+                  &emsp;random price fluctuations.</p>
               </div>
             </div>
-          </div>
-
-          
           </div>
         </div>
       </div>
     </div>
+
+  </div>
   </div>
 
 
@@ -154,25 +197,14 @@
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap.min.js"></script>
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
   <!-- Chart JS -->
   <script src="assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
-  <!-- d3 js -->
-  <script src="https://d3js.org/d3.v6.min.js"></script>
-  <!-- add table script  js -->
-  <script src="assets/js/api_table.js"></script>
-  <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-  <!-- <script src="assets/demo/demo.js"></script> -->
-  <script>
-    // $(document).ready(function () {
-    //   // Javascript method's body can be found in assets/js/demos.js
-    //   demo.initDashboardPageCharts();
 
-    // });
-  </script>
 </body>
 
 </html>
