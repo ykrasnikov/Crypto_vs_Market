@@ -1,7 +1,12 @@
-# Cryptocurrency vs Stock Market Interactive Dashboard
+# Cryptocurrency vs Market Interactive Dashboard
 
 ![Cryptocurrency](Images/crypto.png)
 
+## Deployment Link
+
+The dashboard is deployed in AWS. To access the page, click the following link to explore the cryptocurrency vs market dashboard.
+
+* http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/
 
 ## Background 
 
@@ -15,20 +20,20 @@ Why is Crypto so important and should I care?
 
 There are various types of cryptocurrencies, and for this project, we will focus on easy the most mentioned and used: Bitcoin (BTC), Ethereum (ETH) and Litecoin (LTC).
 
-## Work Scope:
+## Methodology:
 
-* Importing Kaggle data into database. 
-* Find and import another source of data for the market indices.
-* Create database server for data (Mongo Atlas.) -> Charles, Justin
-* Put together a flask app to access data create endpoints. -> Yakov
-* Designing dashboard using bootstrap HTML and CSS. -> Alex, Jessica
-* Create D3.js charts/visualizations. -> Everybody
-* Deploy dashboard and visualizations on Heroku. -> Jessica
+* Data mining from diferent sources like Kaggle and Yahoo Finance.
+* Database server establishment using Mongo Atlas.
+* Creation of the flask app to access the data and create endpoint (API)
+* Exploratory Data Analysis to generate visualizations using D3 and other libraries.
+* Dashboard desing using bootstrap HTML and CSS.
+* Dashboard deployment on AWS.
+
+![Methodology](Images/workflow.png)
 
 ## Data Sources
 
-- Cryptocurrency Historical Prices: 
-https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory
+- Cryptocurrency Historical Prices: https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory
 
     * Bitcoin : https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory?
     select=coin_Bitcoin.csv
@@ -39,11 +44,15 @@ https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory
     * Litecoin: https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory?
     select=coin_Litecoin.csv
 
-- Optional: Global Bitcoin Legality. https://coin.dance/poli
+- Gold Historical Prices & Data: https://finance.yahoo.com/quote/1328.T/history?p=1328.T
 
-- Optional: Cryptocurrency ATM Maps. https://coinatmradar.com/country/226/bitcoin-atm-united-states/
+- S&P500 Historical Prices & Data: https://finance.yahoo.com/quote/ES%3DF/history?p=ES%3DF
 
-## Team members (Team 3)
+- Dollar Index Historical Data: https://finance.yahoo.com/quote/DX-Y.NYB/history?p=DX-Y.NYB
+
+- VIX Volatility Index Historical  Data: https://finance.yahoo.com/quote/%5EVIX/history?p=%5EVIX
+
+## Team members
 
 * Yakov Krasnikov
 * Justin Merryman
@@ -65,6 +74,13 @@ economy-and-build-a-better-future). Accessed March 19, 2021.
 * Coin Desk. "Institutional Investment in Crypto: Top 10 Takeaways of 
 2019."( https://www.coindesk.com/institutional-investment-in-crypto-top-10-
 takeaways-of-2019). Accessed March 19, 2021.
+
+* How to Trade With Exponential Moving Average Strategy. 
+(https://tradingstrategyguides.com/exponential-moving-average-strategy/). Accessed March 30, 2021.
+
+* Technical Incidator Definition. (https://www.investopedia.com/terms/t/technicalindicator.asp). Accessed March 30, 2021.
+
+* Moving Average (MA) Definition. (https://www.investopedia.com/terms/m/movingaverage.asp). Accessed March 30, 2021.
 
 
 
