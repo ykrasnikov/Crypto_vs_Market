@@ -1,6 +1,6 @@
 .line {
   fill: none;
-  stroke-width: 2px;
+  stroke-width: 1px;
 }
 
 .orange {
@@ -27,7 +27,7 @@
 .label {
   font-size-adjust: inherit; 
   text-anchor: middle;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .tooltip {
@@ -40,4 +40,15 @@
   text-align: center;
   border: 0;
   border-radius: 10px;
+}
+
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 95%;
+  overflow: hidden;
+}
+.svg-content-responsive {
+  display: inline-block;
+  position: absolute;
 }
