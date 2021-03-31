@@ -31,10 +31,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <!-- D3 -->
-  <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- CSS Files -->
+  <!-- CSS Files -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -52,18 +49,23 @@
 
       <div class="sidebar-wrapper">
         <div class="logo">
-          <a href="../templates/index.html" class="simple-text">
+          <a href="/" class="simple-text">
             Cryptocurrency vs Market
           </a>
         </div>
 
         <ul class="nav">
           <li>
-            <a href="../templates/index.html">
+            <a href="../">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
           </li>
+          <li>
+            <a href="visualizations.html">
+              <i class="now-ui-icons business_chart-bar-32"></i>
+              <p>Visualizations</p>
+            </a>
           <li>
             <li class="active">
               <a href="/">
@@ -75,11 +77,6 @@
               <i class="now-ui-icons users_single-02"></i>
               <p>Team Members</p>
             </a>
-            <li>
-              <a href="glossary.html">
-                <i class="now-ui-icons files_single-copy-04"></i>
-                <p>Glossary</p>
-              </a>
           </li>
           </li>
         </ul>
@@ -99,7 +96,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../templates/index.html">Dashboard</a>
+            <a class="navbar-brand" href="/">Dashboard</a>
           </div>
           <!-- Dropdown button -->
           <div class="nav-item dropdown">
@@ -109,10 +106,10 @@
               Dropdown
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="../templates/index.html">Dashboard</a>
-              <a class="dropdown-item" href="#">API</a>
+              <a class="dropdown-item" href="/">Dashboard</a>
+              <a class="dropdown-item" href="visualizations.html">Visualizations</a>
+              <a class="dropdown-item" href="api.html">API</a>
               <a class="dropdown-item" href="team.html">Team Members</a>
-              <a class="dropdown-item" href="glossary.html">Glossary</a>
             </div>
           </div>
 
@@ -129,9 +126,14 @@
             <div class="card ">
               <div class="card-header ">
                 API
+              
               </div>
               <div class="card-body ">
                 <div id="plot" ></div>
+                <div class='table'id="table">
+                  api table here
+
+                </div>
               </div>
             </div>
           </div>
@@ -152,14 +154,25 @@
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap.min.js"></script>
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-
   <!-- Chart JS -->
   <script src="assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+  <!-- d3 js -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <!-- add table script  js -->
+  <script src="js/api_table.js"></script>
+  <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <!-- <script src="assets/demo/demo.js"></script> -->
+  <script>
+    // $(document).ready(function () {
+    //   // Javascript method's body can be found in assets/js/demos.js
+    //   demo.initDashboardPageCharts();
 
+    // });
+  </script>
 </body>
 
 </html>

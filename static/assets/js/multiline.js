@@ -1,4 +1,4 @@
-function makeResponsive() {
+
   scrapeData('ETH', 1, "01-01-2013", "03-01-2014");
   scrapeData('ETH', 2, "01-01-2013", "03-01-2014");
   
@@ -80,15 +80,19 @@ function makeResponsive() {
     };
   }
 
-  let svgArea = d3.select("#plot3").select("svg");
-  if (!svgArea.empty()) {
-    svgArea.remove();
-  }
+  let svgArea = d3.select("col-md-12");
+  // if (!svgArea.empty()) {
+  //   svgArea.remove();
+  // }
 
   // SVG wrapper dimensions are determined by the current width
   // and height of the browser window.
-  let svgWidth = window.innerWidth;
-  let svgHeight = window.innerHeight;
+
+  let svgWidth = +svgArea.style("width");
+  let svgHeight = +svgArea.style("height");
+  console.log(svgWidth, svgHeight)
+  // let svgWidth = 900;
+  // let svgHeight = 500;
 
   let margin = {
     top: 30,
@@ -293,10 +297,9 @@ function makeResponsive() {
       }
     }
   }
-};
 
 // When the browser loads, makeResponsive() is called.
-makeResponsive();
+// makeResponsive();
 
 // When the browser window is resized, responsify() is called.
-d3.select("#plot3").on("resize", makeResponsive);
+// d3.select("#plot3").on("resize", makeResponsive);
