@@ -213,20 +213,69 @@
           <div class="col-lg-4 col-md-12">
             <div class="card ">
               <div class="card-header ">
-                <a href='plot3.html'> 
-                <strong>Future Chart </strong>
-              </a>
+                <a href='plot3.html'>
+                  <strong>Multiline Plot </strong>
+                </a>
               </div>
-              <select id="datasetSelection3" class='dataSelection'>
-                <option value="bitcoin">Bitcoin</option>
-                <option value="ethereum">Ethereum</option>
-                <option value="litecoin">Litecoin</option>
+              <select id="selmultiDataset1" class='dataSelection'>
+                <option value="BTC">Bitcoin</option>
+                
                 <option value="gold">Gold</option>
-                <option value="sNp">S&P 500</option>
-            </select>
+                <option value="dollar">Dollar</option>
+                <option value="snp500">S&P 500</option>
+                <option value="vix">VIX</option>
+                <option value="LTC">Litecoin</option>
+                <option value="ETH">Etherum</option>
+                <option value="None Selected">Clear Data 1</option>
+              </select>
+              <select id="selmultiDataset2">
+                <option value="LTC">Litecoin</option>
+                <option value="gold">Gold</option>
+                <option value="dollar">Dollar</option>
+                <option value="snp500">S&P 500</option>
+                <option value="vix">VIX</option>
+                <option value="BTC">Bitcoin</option>
+                <option value="ETH">Etherum</option>
+                <option value="None Selected">Clear Data 2</option>
+              </select>
+              <select id="startyear">
+                <option value="01-01-2013">Start Year</option>
+                <option value="01-01-2013">2013</option>
+                <option value="01-01-2014">2014</option>
+                <option value="01-01-2015">2015</option>
+                <option value="01-01-2016">2016</option>
+                <option value="01-01-2017">2017</option>
+                <option value="01-01-2018">2018</option>
+                <option value="01-01-2019">2019</option>
+                <option value="01-01-2020">2020</option>
+                <option value="01-01-2021">2021</option>
+                <option value="01-01-2021">Current</option>
+              </select>
+              <select id="endyear">
+                <option value="01-01-2021">End Year</option>
+                <option value="01-01-2013">2013</option>
+                <option value="01-01-2014">2014</option>
+                <option value="01-01-2015">2015</option>
+                <option value="01-01-2016">2016</option>
+                <option value="01-01-2017">2017</option>
+                <option value="01-01-2018">2018</option>
+                <option value="01-01-2019">2019</option>
+                <option value="01-01-2020">2020</option>
+                <option value="01-01-2021">2021</option>
+                <option value="03-01-2021">Current</option>
+              </select>
               <div class="card-body ">
-                <div id="plot3"class='plot-h2'></div>
-                <script src=""></script>
+                <div class = "result"></div>
+                <div class = "result2"></div>
+                <div class = "result3"></div>
+                <div id="plot3" class='plot-h2'></div>
+                <script src="https://d3js.org/d3.v6.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+                <script type="text/javascript" src="../static/assets/js/multiline.js"></script>
+                <script type="text/javascript" src="../static/assets/js/multiline2.js"></script>
+                
+                
+                </select>
               </div>
             </div>
           </div>
