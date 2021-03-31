@@ -1,13 +1,13 @@
 
 function makeResponsive() {
-  scrapeData('BTC', 1, "01-01-2013", "03-01-2014");
-  scrapeData('LTC', 2, "01-01-2013", "03-01-2014");
+  scrapeData('ETH', 1, "01-01-2013", "03-01-2014");
+  scrapeData('ETH', 2, "01-01-2013", "03-01-2014");
 
 
-  d3.selectAll("#selDataset").on("change", updateChoice);
+  d3.selectAll("#selmultiDataset1").on("change", updateChoice);
   d3.selectAll("#startyear").on("change", updateChoice);
   d3.selectAll("#endyear").on("change", updateChoice);
-  d3.selectAll("#selDataset2").on("change", updateChoice);
+  d3.selectAll("#selmultiDataset2").on("change", updateChoice);
 
   function updateChoice() {
     // Use D3 to select the dropdown menu
