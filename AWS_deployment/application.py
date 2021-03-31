@@ -37,34 +37,23 @@ def index():
 def home_page():
      """home page for CryptoVsMarket project api"""
      print("homepage vizited")
-     end_point1="/api/all_data/"
-     end_point2="/api/crypto/Symbol,Symbol,.../mm-dd-yyyy,mm-dd-yyyy"
-     end_point3="/api/dollar/"
-     end_point4="/api/snp500/"
-     end_point5="/api/vix/"
-     end_point6="/api/gold/"
-    #  dateformat="yyyy-mm-dd"
-     page_list =f'<h1>Welcome to CryptoVsMarket project API</h1>\
-         <p><b>List of available routes:</b></p>\
-         <p><b>all data </b>            -  {end_point1} <br/></p>\
-         <p><b>Crypto all data  </b>    -  {end_point2} <br/></p>\
-         <p><b>Dollar all data  </b>    -  {end_point3} <br/></p>\
-         <p><b>S&P500 all data  </b>    -  {end_point4} <br/></p>\
-         <p><b>VIX all data  </b>       -  {end_point5} <br/></p>\
-         <p><b>Gold all data  </b>      -  {end_point6} <br/></p>'
+     api_url="http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/"
+     date_url="02-01-2017,02-11-2017"
      end_points=[
           {'text':'all api links',
-          'link':' <a href="http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/">api links</a>'},
-          {'text':'crypto api link',
-          'link':' <a href="http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/crypto/BTC,LTC,ETH/01-01-2015,01-02-2015">crypto Symbol,Symbol,...mm-dd-yyyy,mm-dd-yyyy</a>'},
-          {'text':'dollar api link',
-          'link':' <a href="http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/dollar"> dollar api link</a>'},
-          {'text':'S&P500 api link',
-          'link':' <a href="http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/dollar"> S&P api link</a>'},
-          {'text':'VIX api link',
-          'link':' <a href="http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/dollar"> VIX api link</a>'},
-          {'text':'Gold api link',
-          'link':' <a href="http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/dollar"> gold api link</a>'},
+          'link':f' <a href={api_url}>api links</a>'},
+          {'text':'all_data date search api link',
+          'link':f' <a href="{api_url}all_data/{date_url}">all data api link mm-dd-yyyy,mm-dd-yyyy</a>'},
+          {'text':'crypto api date search link',
+          'link':f' <a href="{api_url}crypto/BTC,LTC,ETH/{date_url}">crypto Symbol,Symbol,...mm-dd-yyyy,mm-dd-yyyy</a>'},
+          {'text':'dollar api date search link ',
+          'link':f' <a href="{api_url}dollar/{date_url}"> dollar api link mm-dd-yyyy,mm-dd-yyyy</a>'},
+          {'text':'S&P500 api date search link',
+          'link':f' <a href="{api_url}snp500/{date_url}"> S&P api link mm-dd-yyyy,mm-dd-yyyy</a>'},
+          {'text':'VIX api date search link date search',
+          'link':f' <a href="{api_url}vix/{date_url}"> VIX api link mm-dd-yyyy,mm-dd-yyyy</a>'},
+          {'text':'Gold api date search link',
+          'link':f' <a href="{api_url}gold/{date_url}"> gold api link mm-dd-yyyy,mm-dd-yyyy </a>'},
             ]
      
      json_data=jsonify(end_points)
@@ -293,6 +282,3 @@ def handle_date(date):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-

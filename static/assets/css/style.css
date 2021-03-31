@@ -1,14 +1,24 @@
+
+
+
+
+
 .col-md-12 {
-    height: 600px;
+    
 }
 
-#selDataset {
+.card{
+    /* height: 600px; */
+}
+
+.dataSelection {
     margin-top: 10px;
     margin-left: 20px;
 }
 
+
 #plot {
-    height: 500px;
+    /* height: 500px; */
 }
 
 .dropdown-menu {
@@ -16,14 +26,27 @@
 }
 
 #plot2 {
-    height: 530px;
+    /* height: 500px; */
 }
 
 #plot3 {
-    height: 530px;
+    /* height: 500px; */
 }
 
 #plot4 {
-    height: 530px;
+    /* height: 500px; */
 }
 
+.plot-h1{
+    height: 500px;
+}
+.plot-h2{
+    height: 300px;
+}
+/* RESIZE FOR SMALLER SCREEN                RESIZE FOR SMALLER SCREEN */
+@media(min-width: 500px){
+    .sidebar {
+        display: block;
+        box-shadow: 0px 2px 22px 0 rgb(0 0 0 / 20%), 0px 2px 30px 0 rgb(0 0 0 / 35%);
+            }
+    }
