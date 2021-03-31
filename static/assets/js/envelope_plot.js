@@ -43,7 +43,7 @@ function init() {
               chart.selectRange('2020-03-31', '2021-03-31');
 
               // set container id for the chart
-              chart.container('plot2');
+              chart.container('#plot2');
               // initiate chart drawing
               chart.draw();
 
