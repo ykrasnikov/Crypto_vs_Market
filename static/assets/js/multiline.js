@@ -11,16 +11,17 @@ function makeResponsive() {
   function updateChoice() {
     // Use D3 to select the dropdown menu
     // Assign the value of the dropdown menu option to a variable
-    let dropdownMenu = d3.select("#selDataset");
+    let dropdownMenu = d3.select("#selmultiDataset1");
     let choice = dropdownMenu.property("value");
     let dropdownDate = d3.select("#startyear");
     let start = dropdownDate.property("value");
     let dropdownEnd = d3.select("#endyear");
     let end = dropdownEnd.property("value");
-    let dropdownMenu2 = d3.select("#selDataset2");
+    let dropdownMenu2 = d3.select("#selmultiDataset2");
     // Assign the value of the dropdown menu option to a variable
     let choice2 = dropdownMenu2.property("value");
     //Send data selection to scrapeData function
+    // console.log(choice, choice2)
     scrapeData(choice, 1, start, end)
     scrapeData(choice2, 2, start, end)
   }
@@ -67,7 +68,7 @@ function makeResponsive() {
           return date;
         }
         let date = data.map((values, i) => (convertTime(data[i].Date.$date)));
-        // console.log(date);
+        
         let coinUpper = coin.charAt(0).toUpperCase() + coin.slice(1);
         if (choiceNum == 1) {
           graphData(closeData, date, coinUpper, 1);
@@ -79,7 +80,7 @@ function makeResponsive() {
     };
   }
 
-  let svgArea = d3.select("body").select("svg");
+  let svgArea = d3.select("#plot3").select("svg");
   if (!svgArea.empty()) {
     svgArea.remove();
   }
@@ -100,7 +101,7 @@ function makeResponsive() {
   let chartWidth = svgWidth - margin.left - margin.right;
 
   // Select body, append SVG area to it, and set its dimensions
-  let svg = d3.select("body")
+  let svg = d3.select("#plot3")
     .append("svg")
     .attr("width", svgWidth)
     .attr("height", svgHeight);
@@ -167,6 +168,7 @@ function makeResponsive() {
         data[1] = parseTime(data[1]);
         return dataArray;
       });
+      
       buildGraph(dataArray, choice, numChoice)
     }
     //Build data array from user selection
@@ -266,7 +268,7 @@ function makeResponsive() {
 
         // Step 1: Append a div to the body to create tooltips, assign it a class
         // =======================================================
-        let toolTip = d3.select("body").append("div")
+        let toolTip = d3.select("#plot3").append("div")
           .attr("class", "tooltip");
 
         // Step 2: Add an onmouseover event to display a tooltip
@@ -278,8 +280,8 @@ function makeResponsive() {
          
           toolTip.html(` <strong> ${choice} Cost,Date:${d[0]},${d[1]} <br> Cost,Date: ${print}</strong>`)
             .style("left", (event.pageX - 40) + "px")
-            .style("top", (margin.top + 20) + "px");
-          // toolTip.style("background", `${color}`)
+            .style("top", (event.pageY + 20) + "px");
+          toolTip.style("background", `${color}`)
 
           ;
 
@@ -297,4 +299,4 @@ function makeResponsive() {
 makeResponsive();
 
 // When the browser window is resized, responsify() is called.
-d3.select(window).on("resize", makeResponsive);
+d3.select("#plot3").on("resize", makeResponsive);
