@@ -11,7 +11,7 @@ let ethereum = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/
 
 anychart.onDocumentReady(function () {
     //loading data from api
-    anychart.data.loadJsonFile(litecoin,
+    anychart.data.loadJsonFile(bitcoin,
       function (data) {
         //mapping data
         let stockData = data.map(d=>({
@@ -44,7 +44,7 @@ anychart.onDocumentReady(function () {
         // adding extra Y axis to the right side
         plot.yAxis(1).orientation('right');
         // create line series
-        plot.ohlc().data(mapping).name('Litecoin');
+        plot.ohlc().data(mapping).name('Bitcoin');
 
         var indicatorPlot = chart.plot(1);
         // set plot height
