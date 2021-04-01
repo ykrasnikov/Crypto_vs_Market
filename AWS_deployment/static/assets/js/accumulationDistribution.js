@@ -11,7 +11,7 @@ let ethereum = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/
 
 anychart.onDocumentReady(function () {
     //loading data from api
-    anychart.data.loadJsonFile(litecoin,
+    anychart.data.loadJsonFile(bitcoin,
       function (data) {
         //mapping data
         let stockData = data.map(d=>({
@@ -44,7 +44,7 @@ anychart.onDocumentReady(function () {
         // adding extra Y axis to the right side
         plot.yAxis(1).orientation('right');
         // create line series
-        plot.ohlc().data(mapping).name('CSCO');
+        plot.ohlc().data(mapping).name('Bitcoin');
 
         var indicatorPlot = chart.plot(1);
         // set plot height
@@ -123,7 +123,7 @@ function updateChart(){
                 // adding extra Y axis to the right side
                 plot.yAxis(1).orientation('right');
                 // create line series
-                plot.ohlc().data(mapping).name('CSCO');
+                plot.ohlc().data(mapping).name('Ethereum');
         
                 var indicatorPlot = chart.plot(1);
                 // set plot height
@@ -193,7 +193,7 @@ function updateChart(){
                 // adding extra Y axis to the right side
                 plot.yAxis(1).orientation('right');
                 // create line series
-                plot.ohlc().data(mapping).name('CSCO');
+                plot.ohlc().data(mapping).name('Litecoin');
         
                 var indicatorPlot = chart.plot(1);
                 // set plot height
@@ -263,7 +263,7 @@ function updateChart(){
                 // adding extra Y axis to the right side
                 plot.yAxis(1).orientation('right');
                 // create line series
-                plot.ohlc().data(mapping).name('CSCO');
+                plot.ohlc().data(mapping).name('Bitcoin');
         
                 var indicatorPlot = chart.plot(1);
                 // set plot height
@@ -333,7 +333,7 @@ function updateChart(){
                 // adding extra Y axis to the right side
                 plot.yAxis(1).orientation('right');
                 // create line series
-                plot.ohlc().data(mapping).name('CSCO');
+                plot.ohlc().data(mapping).name('S&P 500');
         
                 var indicatorPlot = chart.plot(1);
                 // set plot height
@@ -370,7 +370,7 @@ function updateChart(){
         clearChart('plot4')
         anychart.onDocumentReady(function () {
             //loading data from api
-            anychart.data.loadJsonFile(litecoin,
+            anychart.data.loadJsonFile(gold,
               function (data) {
                 //mapping data
                 let stockData = data.map(d=>({
@@ -403,7 +403,7 @@ function updateChart(){
                 // adding extra Y axis to the right side
                 plot.yAxis(1).orientation('right');
                 // create line series
-                plot.ohlc().data(mapping).name('CSCO');
+                plot.ohlc().data(mapping).name('Gold');
         
                 var indicatorPlot = chart.plot(1);
                 // set plot height
