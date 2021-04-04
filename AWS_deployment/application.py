@@ -11,7 +11,7 @@ from datetime import date, datetime
 # Flask
 from flask import Flask,jsonify, request
 # CORS making cross-origin AJAX possible
-from flask_cors import CORS
+# from flask_cors import CORS
 # database querry
 
 
@@ -19,7 +19,7 @@ from flask_cors import CORS
 ################### Flask setup
 #####################################################################
 application=app=Flask(__name__)
-CORS(app)
+# CORS(app)
 
 #####################################################################
 ################### setup home page - render HTML
@@ -37,7 +37,7 @@ def index():
 def home_page():
      """home page for CryptoVsMarket project api"""
      print("homepage vizited")
-     api_url="http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/"
+     api_url="/api/"
      date_url="02-01-2017,02-11-2017"
      end_points=[
           {'text':'all api links',

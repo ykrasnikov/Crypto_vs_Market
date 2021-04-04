@@ -1,4 +1,4 @@
-urlBTC = "http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/crypto/BTC/04-29-2013,02-27-2021"
+urlBTC = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/crypto/BTC/04-29-2013,02-27-2021"
 d3.json(urlBTC).then(data => {
     console.log(data)
 });
