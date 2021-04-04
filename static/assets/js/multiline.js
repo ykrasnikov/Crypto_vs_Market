@@ -8,7 +8,7 @@ d3.select(window).on("resize", getSize);
 
 function getSize(){
 
-  console.log("window changed");
+  // console.log("window changed");
   let height = plot3.offsetHeight;
   let width = plot3.offsetWidth;
   makeResponsive(width, height)
@@ -97,7 +97,7 @@ function makeResponsive(width, height){
   }
 
   let svgArea = d3.select("body").select("#plot3").select("svg");
-  console.log(svgArea);  
+  // console.log(svgArea);  
   if (!svgArea.empty()) {
     svgArea.remove();
   }

@@ -3,14 +3,15 @@ function init() {
       anychart.onDocumentReady(function () {
         // load data
         // 3 cryptos
-          let Bitcoin = "http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/crypto/BTC/04-29-2013,02-27-2021";
-          let Ethereum = "http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/crypto/ETH/08-08-2015,02-27-2021";
-          let Litecoin = "http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/crypto/LTC/04-29-2013,02-27-2021";
-          let Dollar = "http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/dollar/";
-          let SnP500 = "http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/snp500/";
-          let VIX = "http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/vix/";
-          let Gold = "http://demosimple-env.eba-pyvzehps.us-east-2.elasticbeanstalk.com/api/gold/";
-          let dataset = Bitcoin;
+          let mainURL="http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/",
+            Bitcoin = mainURL+"api/crypto/BTC/04-29-2013,02-27-2021",
+            Ethereum = mainURL+"api/crypto/ETH/08-08-2015,02-27-2021",
+            Litecoin = mainURL+"api/crypto/LTC/04-29-2013,02-27-2021",
+            Dollar = mainURL+"api/dollar/04-29-2013,02-27-2021",
+            SnP500 = mainURL+"api/snp500/04-29-2013,02-27-2021",
+            VIX = mainURL+"api/vix/04-29-2013,02-27-2021",
+            Gold = mainURL+"api/gold/04-29-2013,02-27-2021",
+            dataset = Bitcoin;
           
           //Define Chart and Plot Data
           anychart.data.loadJsonFile(dataset,function(data) {

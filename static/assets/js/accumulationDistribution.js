@@ -1,4 +1,4 @@
-console.log("I'm here!")
+// console.log("I'm here!")
 let sNp = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/snp500/02-01-2000,02-11-2050"
 let gold = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/gold/02-01-2000,02-11-2050"
 let bitcoin = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/crypto/BTC/02-01-2000,02-11-2050"
@@ -18,7 +18,7 @@ anychart.onDocumentReady(function () {
             name: d.Name, symbol: d.Symbol, date: d.Date.$date, open: d.Open,
             high: d.High, low: d.Low, close: d.Close, volume:d.Volume, mktcap: d.Marketcap
         }))
-        console.log(stockData)
+        // console.log(stockData)
 
         // create data table on loaded data
         var dataTable = anychart.data.table('date');
@@ -97,7 +97,7 @@ function updateChart(){
                     name: d.Name, symbol: d.Symbol, date: d.Date.$date, open: d.Open,
                     high: d.High, low: d.Low, close: d.Close, volume:d.Volume, mktcap: d.Marketcap
                 }))
-                console.log(stockData)
+                // console.log(stockData)
         
                 // create data table on loaded data
                 var dataTable = anychart.data.table('date');
@@ -167,7 +167,7 @@ function updateChart(){
                     name: d.Name, symbol: d.Symbol, date: d.Date.$date, open: d.Open,
                     high: d.High, low: d.Low, close: d.Close, volume:d.Volume, mktcap: d.Marketcap
                 }))
-                console.log(stockData)
+                // console.log(stockData)
         
                 // create data table on loaded data
                 var dataTable = anychart.data.table('date');
@@ -237,7 +237,7 @@ function updateChart(){
                     name: d.Name, symbol: d.Symbol, date: d.Date.$date, open: d.Open,
                     high: d.High, low: d.Low, close: d.Close, volume:d.Volume, mktcap: d.Marketcap
                 }))
-                console.log(stockData)
+                // console.log(stockData)
         
                 // create data table on loaded data
                 var dataTable = anychart.data.table('date');
@@ -307,7 +307,7 @@ function updateChart(){
                     name: d.Name, symbol: d.Symbol, date: d.Date.$date, open: d.Open,
                     high: d.High, low: d.Low, close: d.Close, volume:d.Volume, mktcap: d.Marketcap
                 }))
-                console.log(stockData)
+                // console.log(stockData)
         
                 // create data table on loaded data
                 var dataTable = anychart.data.table('date');
@@ -377,7 +377,7 @@ function updateChart(){
                     name: d.Name, symbol: d.Symbol, date: d.Date.$date, open: d.Open,
                     high: d.High, low: d.Low, close: d.Close, volume:d.Volume, mktcap: d.Marketcap
                 }))
-                console.log(stockData)
+                // console.log(stockData)
         
                 // create data table on loaded data
                 var dataTable = anychart.data.table('date');
