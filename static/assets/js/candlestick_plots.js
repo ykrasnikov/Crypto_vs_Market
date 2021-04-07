@@ -1,6 +1,6 @@
-urlBTC = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/crypto/BTC/04-29-2013,02-27-2021";
-urlETH = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/crypto/ETH/08-08-2015,02-27-2021";
-urlLTC = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/crypto/LTC/04-29-2013,02-27-2021";
+urlBTC = "/api/crypto/BTC/04-29-2013,02-27-2021";
+urlETH = "/api/crypto/ETH/08-08-2015,02-27-2021";
+urlLTC = "/api/crypto/LTC/04-29-2013,02-27-2021";
 
 
 function init() {
