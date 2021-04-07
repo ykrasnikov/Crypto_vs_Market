@@ -1,9 +1,9 @@
 // console.log("I'm here!")
-let sNp = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/snp500/02-01-2000,02-11-2050"
-let gold = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/gold/02-01-2000,02-11-2050"
-let bitcoin = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/crypto/BTC/02-01-2000,02-11-2050"
-let litecoin = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/crypto/LTC/02-01-2000,02-11-2050"
-let ethereum = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api/crypto/ETH/02-01-2000,02-11-2050"
+let sNp = "/api/snp500/02-01-2000,02-11-2050"
+let gold = "/api/gold/02-01-2000,02-11-2050"
+let bitcoin = "/api/crypto/BTC/02-01-2000,02-11-2050"
+let litecoin = "/api/crypto/LTC/02-01-2000,02-11-2050"
+let ethereum = "/api/crypto/ETH/02-01-2000,02-11-2050"
 
 
 

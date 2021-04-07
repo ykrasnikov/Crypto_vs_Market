@@ -3,14 +3,14 @@ function init() {
       anychart.onDocumentReady(function () {
         // load data
         // 3 cryptos
-          let mainURL="http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/",
-            Bitcoin = mainURL+"api/crypto/BTC/04-29-2013,02-27-2021",
-            Ethereum = mainURL+"api/crypto/ETH/08-08-2015,02-27-2021",
-            Litecoin = mainURL+"api/crypto/LTC/04-29-2013,02-27-2021",
-            Dollar = mainURL+"api/dollar/04-29-2013,02-27-2021",
-            SnP500 = mainURL+"api/snp500/04-29-2013,02-27-2021",
-            VIX = mainURL+"api/vix/04-29-2013,02-27-2021",
-            Gold = mainURL+"api/gold/04-29-2013,02-27-2021",
+          let mainURL="/api/",
+            Bitcoin = mainURL+"crypto/BTC/04-29-2013,02-27-2021",
+            Ethereum = mainURL+"crypto/ETH/08-08-2015,02-27-2021",
+            Litecoin = mainURL+"crypto/LTC/04-29-2013,02-27-2021",
+            Dollar = mainURL+"dollar/04-29-2013,02-27-2021",
+            SnP500 = mainURL+"snp500/04-29-2013,02-27-2021",
+            VIX = mainURL+"vix/04-29-2013,02-27-2021",
+            Gold = mainURL+"gold/04-29-2013,02-27-2021",
             dataset = Bitcoin;
           
           //Define Chart and Plot Data
