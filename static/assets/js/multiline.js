@@ -44,7 +44,7 @@ function makeResponsive(width, height){
 
   //Scrape data function
   function scrapeData(coin, choiceNum, startYear, endYear) {
-    const baseLink = "http://cryptocurrencyproject.us-east-2.elasticbeanstalk.com/api"
+    const baseLink = "/api"
     if (coin == "None Selected") {
       if (choiceNum == 1) {
         let link = `${baseLink}/crypto/${coin}/01-01-2013,03-01-2014`
