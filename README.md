@@ -1,6 +1,13 @@
 # Cryptocurrency vs Market Interactive Dashboard
 
 ![Cryptocurrency](Images/crypto.png)
+<br>
+* Web Application deployed in AWS, incorporating flask API
+* Tools/libraries: Python: Flask, pandas, pymongo, bson; JavaScript: D3, jQuery,
+AnyChart; HTML: Bootstrap
+* Team of 5 people, lead contributor
+
+
 
 ## Deployment Link
 
